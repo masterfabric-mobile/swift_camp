@@ -54,4 +54,9 @@ extension HomeWireframe: HomeWireframeInterface {
         let frameWireframe = FrameWireframe()
         navigationController?.pushWireframe(frameWireframe)
     }
+    
+    func showLazyHStack() {
+        let lazyHStackWireframe = LazyHStackWireframe()
+        navigationController?.pushWireframe(lazyHStackWireframe)
+    }
 }

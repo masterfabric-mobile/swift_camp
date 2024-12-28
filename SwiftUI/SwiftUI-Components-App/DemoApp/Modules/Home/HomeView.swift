@@ -186,6 +186,7 @@ struct HomeView: View {
                                 title: "Go to ContentView", action: { presenter.showContentView() }),
                             ButtonModel(
                                 title: "Go to ColorPicker", action: { presenter.showColorPicker() }),
+                            ButtonModel(title: "Go to LazyHStack", action: { presenter.showLazyHStack() }),
                             ButtonModel(
                                 title: "Go to Rectangle", action: { presenter.showRectangle() }),
                             ButtonModel(title: "Go to Frame", action: { presenter.showFrame() }),

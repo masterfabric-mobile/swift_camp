@@ -9,4 +9,5 @@ protocol HomeWireframeInterface: WireframeInterface {
     func showHStack()
     func showNavigationStack()
     func showFrame()
+    func showLazyHStack()
 }
