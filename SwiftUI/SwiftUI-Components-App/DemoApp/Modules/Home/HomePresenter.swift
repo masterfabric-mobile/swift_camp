@@ -38,10 +38,16 @@ final class HomePresenter: ObservableObject {
         wireframe.showRectangle()
     }
 
-    /// Navigates to VStackView
+    /// Navigates to SectionView
+    func showSection() {
+        wireframe.showSection()
+    }
+
+    /// Navigates to HStackView
     func showHStack() {
         wireframe.showHStack()
     }
+
     /// Navigates to NavigationStackView
     func showNavigationStack() {
         wireframe.showNavigationStack()
@@ -51,9 +57,30 @@ final class HomePresenter: ObservableObject {
     func showFrame() {
         wireframe.showFrame()
     }
-    
+
     /// Navigates to LazyHStackView
     func showLazyHStack() {
         wireframe.showLazyHStack()
     }
+
+    /// Navigates to ScrollView
+    func showScrollView() {
+        wireframe.showScrollView()
+    }
+    
+    /// Navigates to NavigationView
+    func showNavigationView() {
+        wireframe.showNavigationView()
+    }
+    
+    /// Navigates to TransactionView
+    func showTransaction(){
+        wireframe.showTransaction()
+    }
+    
+    /// Navigates to LazyVStack
+    func showLazyVStackView() {
+        wireframe.showLazyVStackView()
+    }
 }
+
