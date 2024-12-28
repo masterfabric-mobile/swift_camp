@@ -7,4 +7,6 @@ protocol HomeWireframeInterface: WireframeInterface {
     func showColorPicker()
     func showRectangle()
     func showHStack()
+    func showNavigationStack()
+    func showFrame()
 }
