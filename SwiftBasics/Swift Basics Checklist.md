@@ -1,76 +1,76 @@
 # Swift Basics Checklist
 
-- [ ] **Variables and Constants**
-  - [ ] var
-  - [ ] let
-  - [ ] Type Declaration
-  - [ ] Type Inference
+- [X] **Variables and Constants**
+  - [X] var
+  - [X] let
+  - [X] Type Declaration
+  - [X] Type Inference
 
-- [ ] **Data Types**
-  - [ ] String
-  - [ ] Int
-  - [ ] Double
-  - [ ] Float
-  - [ ] Bool
-  - [ ] Array
-  - [ ] Dictionary
-  - [ ] Set
-  - [ ] Tuple
-  - [ ] Optionals
-  - [ ] Any and AnyObject
-  - [ ] Typealias
-
+- [X] **Data Types**
+  - [X] String
+  - [X] Int
+  - [X] Double
+  - [X] Float
+  - [X] Bool
+  - [X] Array
+  - [X] Dictionary
+  - [X] Set
+  - [X] Tuple
+  - [X] Optionals
+  - [x] Any and AnyObject
+  - [x] Typealias
+  
 - [ ] **Operators**
-  - [ ] Assignment Operator (=)
-  - [ ] Arithmetic Operators (+, -, *, /, %)
-  - [ ] Comparison Operators (==, !=, >, <, >=, <=)
-  - [ ] Logical Operators (&&, ||, !)
-  - [ ] String Concatenation (+)
-  - [ ] Ternary Operator (?:)
-  - [ ] Nil-Coalescing Operator (??)
+  - [X] Assignment Operator (=)
+  - [X] Arithmetic Operators (+, -, *, /, %)
+  - [X] Comparison Operators (==, !=, >, <, >=, <=)
+  - [X] Logical Operators (&&, ||, !)
+  - [X] String Concatenation (+)
+  - [x] Ternary Operator (?:)
+  - [x] Nil-Coalescing Operator (??)
 
 - [ ] **Control Flow**
-  - [ ] if
-  - [ ] else
-  - [ ] else if
-  - [ ] guard
-  - [ ] switch
-  - [ ] for loop
-  - [ ] while loop
-  - [ ] repeat-while loop
+  - [X] if
+  - [X] else
+  - [X] else if
+  - [X] guard
+  - [X] switch
+  - [X] for loop
+  - [X] while loop
+  - [X] repeat-while loop
 
 - [ ] **Functions**
-  - [ ] Function Definition
-  - [ ] Parameters
-  - [ ] Return Values
-  - [ ] Argument Labels
-  - [ ] Default Parameters
-  - [ ] Variadic Parameters
-  - [ ] In-Out Parameters
+  - [X] Function Definition
+  - [X] Parameters
+  - [X] Return Values
+  - [X] Argument Labels
+  - [X] Default Parameters
+  - [X] Variadic Parameters
+  - [X] In-Out Parameters
 
 - [ ] **Closures**
-  - [ ] Closure Syntax
-  - [ ] Trailing Closures
-  - [ ] Capture List
+  - [X] Closure Syntax
+  - [X] Trailing Closures
+  - [X] Capture List
 
 - [ ] **Struct and Class**
-  - [ ] Struct Definition
-  - [ ] Class Definition
-  - [ ] Properties
-  - [ ] Methods
-  - [ ] Initializers
-  - [ ] Self
-  - [ ] Mutating Methods (for Structs)
-  - [ ] Inheritance (for Classes)
-  - [ ] Deinitializers
-  - [ ] Static and Class Properties/Methods
+  - [X] Struct Definition
+  - [X] Class Definition
+  - [X] Properties
+  - [X] Methods
+  - [X] Initializers
+  - [x] Self
+  - [X] Mutating Methods (for Structs)
+  - [X] Inheritance (for Classes)
+  - [x] Deinitializers
+  - [X] Static and Class Properties/Methods
 
 - [ ] **Enum**
-  - [ ] Enum Definition
-  - [ ] Raw Values
-  - [ ] Associated Values
-  - [ ] CaseIterable
-  - [ ] Using Enum with Switch
+  - [X] Enum Definition
+  - [X] Raw Values
+  - [X] Associated Values
+  - [X] CaseIterable
+  - [X] Using Enum with Switch
 
 - [ ] **Protocols and Extensions**
   - [ ] Protocol Definition
@@ -79,19 +79,19 @@
   - [ ] Extensions
 
 - [ ] **Error Handling**
-  - [ ] Do-Catch Blocks
-  - [ ] Throwing Functions
+  - [X] Do-Catch Blocks
+  - [X] Throwing Functions
   - [ ] Try, Try?, Try!
 
 - [ ] **Other Concepts**
   - [ ] Optional Binding
-  - [ ] Optional Chaining
-  - [ ] Lazy Properties
+  - [X] Optional Chaining
+  - [X] Lazy Properties
   - [ ] Computed Properties
-  - [ ] Property Observers
+  - [X] Property Observers
   - [ ] KeyPaths
-  - [ ] Subscripts
+  - [X] Subscripts
   - [ ] Memory Management (ARC)
   - [ ] Weak and Unowned References
   - [ ] Generics
-  - [ ] Type Casting (as, as?, as!)
+  - [X] Type Casting (as, as?, as!)

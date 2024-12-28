@@ -93,4 +93,18 @@ func runStructuresAndClassesExamples() {
         pointer.pointee += 1 // Modify value through pointer
         print("Updated Value: \(pointer.pointee)")
     }
+
+
+    // Self
+    struct Counter{
+        var count = 0
+        mutating func increase(){
+            self.count += 1 //count of the Struct is called
+        }
+    }
+
+    var theCounter Counter()
+    theCounter.increase()
+    print("Count is \(theCounter.count)") //Output: 1
+
 }

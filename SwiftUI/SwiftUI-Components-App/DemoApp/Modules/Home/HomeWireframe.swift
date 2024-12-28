@@ -1,6 +1,6 @@
 import UIKit
 
-final class HomeWireframe: BaseWireframe<LazyHostingViewController<HomeView>> {
+final class HomeWireframe: BaseWireframe<LazyHostingViewController<HomeView>>, VStackWireframeInterface {
 
     // MARK: - Module setup -
 
@@ -10,6 +10,8 @@ final class HomeWireframe: BaseWireframe<LazyHostingViewController<HomeView>> {
         super.init(viewController: moduleViewController)
 
         let presenter = HomePresenter(wireframe: self)
+        
+        
 
         moduleViewController.rootView = HomeView(presenter: presenter)
     }
@@ -22,6 +24,11 @@ extension HomeWireframe: HomeWireframeInterface {
 
     func goBack() {
         navigationController?.popViewController(animated: true)
+    }
+    
+    func showVStack() {
+        let vStackWireframe = VStackWireframe()
+        navigationController?.pushWireframe(vStackWireframe)
     }
 
 }

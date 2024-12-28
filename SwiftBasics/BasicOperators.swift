@@ -40,4 +40,17 @@ let correctResult = (10 + 2) * 5 // (10 + 2) * 5 = 60
 print(result)
 print(correctResult)
 
+//Ternary Operator
+let theScore = 90
+let grade = theScore >= 70 ? "Pass" : "Fail"
+print("Grade: \(grade)") // Output: Pass (90 >= 70)
 
+//Nil-Coalescing Operator (??)
+let firstUser: String? = nil
+let secondUser: String? = "TheUser"
+
+let firstDisplay = firstUser ?? "DefaultUser" 
+let secondDisplay: String = secondUser ?? "DefaultUser" 
+
+print(firstDisplay) // Output: DefaultUser (firstUser == nil)
+print(secondDisplay) // Output: TheUser (secondUser == "TheUser")

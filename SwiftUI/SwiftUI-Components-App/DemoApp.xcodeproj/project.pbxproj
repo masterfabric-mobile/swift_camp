@@ -54,6 +54,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		5536DDE02D1FEC1B0003C161 /* Components */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Components; sourceTree = "<group>"; };
 		6EFA4C602D1FE2BB00C140BB /* Components */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Components; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
@@ -145,6 +146,7 @@
 		7F313A47292BCD750048C74C /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				5536DDE02D1FEC1B0003C161 /* Components */,
 				6EFA4C602D1FE2BB00C140BB /* Components */,
 				7F313A48292BCD860048C74C /* HomeInterfaces.swift */,
 				7F313A49292BCD860048C74C /* HomePresenter.swift */,
@@ -170,6 +172,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
+				5536DDE02D1FEC1B0003C161 /* Components */,
 				6EFA4C602D1FE2BB00C140BB /* Components */,
 			);
 			name = DemoApp;

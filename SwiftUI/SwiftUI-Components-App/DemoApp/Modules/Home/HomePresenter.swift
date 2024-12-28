@@ -14,6 +14,10 @@ final class HomePresenter: ObservableObject {
         self.wireframe = wireframe
        
     }
+    
+    func showVStack() {
+        wireframe.showVStack()
+    }
 
     
 

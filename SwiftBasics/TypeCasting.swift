@@ -60,3 +60,24 @@ for animal in animals {
 // Unknown animal
 // Woof!
 // Meow!
+
+
+// Any and AnyObject
+let anyArray: [Any] = ["Hello", 13, 5.1, true]
+
+for item in anyArray{ // Output: String Int Double true
+    if let string = item as? String {
+        print("String: \(string)")
+    } else if let int = item as? Int {
+        print("Int: \(int)")
+    } else if let double = item as? Double {
+        print("Double: \(double)")
+    } else {
+        print("Other type: \(item)")
+    } 
+}
+
+// Typealias
+typealias Coordinate = (x: Int, y: Int, z: Int)
+let thePoint: Coordinate = (x: 5, y: 10, z: 20)
+print("The point is at (\(thePoint.x), \(thePoint.y), \(thePoint.z))") // Output: The point is at (5, 10, 20)

@@ -4,6 +4,8 @@ struct HomeView: View {
     
     @ObservedObject var presenter: HomePresenter
     
+    
+    
     var body: some View {
         NavigationView {
             ScrollView {
@@ -19,8 +21,14 @@ struct HomeView: View {
                         .background(Color.green)
                         .foregroundColor(.white)
                         .cornerRadius(10)
-
+                    
+                    
+                    Button("Go to VStackView") {
+                        presenter.showVStack()
+                                }
+                        
                 }
+                
                 .padding()
             }
         }

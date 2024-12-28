@@ -1,7 +1,7 @@
 # SwiftUI Components Checklist
 
 - [ ] **View Containers**
-  - [ ] VStack
+  - [x] VStack @mehmetalbyrak
   - [ ] HStack
   - [ ] ZStack
   - [ ] LazyVStack
@@ -105,3 +105,4 @@
   - [ ] Binding
   - [ ] ObservedObject
   - [ ] FocusState
+  
