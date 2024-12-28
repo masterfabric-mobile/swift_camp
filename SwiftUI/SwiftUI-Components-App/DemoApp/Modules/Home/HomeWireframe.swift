@@ -41,17 +41,10 @@ extension HomeWireframe: HomeWireframeInterface {
         let rectangleWireframe = RectangleWireframe()
         navigationController?.pushWireframe(rectangleWireframe)
     }
-    
-    func showSection() {
-        let sectionWireframe = SectionWireframe()
-        navigationController?.pushWireframe(sectionWireframe)
-    }
-    
     func showHStack() {
         let hStackWireframe = HStackWireframe()
         navigationController?.pushWireframe(hStackWireframe)
     }
-    
     func showNavigationStack() {
         let navigationStackWireframe = NavigationStackWireframe()
         navigationController?.pushWireframe(navigationStackWireframe)
@@ -61,30 +54,9 @@ extension HomeWireframe: HomeWireframeInterface {
         let frameWireframe = FrameWireframe()
         navigationController?.pushWireframe(frameWireframe)
     }
-
+    
     func showLazyHStack() {
         let lazyHStackWireframe = LazyHStackWireframe()
         navigationController?.pushWireframe(lazyHStackWireframe)
     }
-    
-    func showScrollView() {
-        let scrollViewWireframe = ScrollViewWireframe()
-        navigationController?.pushWireframe(scrollViewWireframe)
-    }
-    
-    func showNavigationView() {
-        let navigationWireframe = NavigationWireframe()
-        navigationController?.pushWireframe(navigationWireframe)
-    }
-    
-    func showTransaction() {
-        let transactionWireframe = TransactionWireframe()
-        navigationController?.pushWireframe(transactionWireframe)
-    }
-    
-    func showLazyVStackView() {
-        let lazyVStackViewWireframe = LazyVStackWireframe()
-        navigationController?.pushWireframe(lazyVStackViewWireframe)
-    }
 }
-
