@@ -144,4 +144,9 @@ final class HomePresenter: ObservableObject {
     func showPicker() {
             wireframe.showPicker()
     }
+    
+    // Navigates to RotationEffect
+    func showRotationEffect() {
+        wireframe.showRotationEffect()
+    }
 }

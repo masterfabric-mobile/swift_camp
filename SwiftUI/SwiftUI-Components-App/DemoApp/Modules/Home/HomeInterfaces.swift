@@ -36,6 +36,7 @@ protocol HomeWireframeInterface: WireframeInterface {
     func showEllipse()
     func showPadding()
     func showPicker()
+    func showRotationEffect()
 
 
 }

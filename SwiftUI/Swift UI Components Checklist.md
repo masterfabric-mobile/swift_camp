@@ -67,7 +67,7 @@
   - [ ] Frame @turhanGoksu
   - [ ] Offset @mehmetalbyrak
   - [ ] ScaleEffect @beyzanuravsar
-  - [ ] RotationEffect @alakkaya
+  - [x] RotationEffect @alakkaya
   - [ ] Opacity @melihalkbk
 
 - [ ] **Animations**
