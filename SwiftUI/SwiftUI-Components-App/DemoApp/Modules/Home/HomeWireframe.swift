@@ -168,4 +168,10 @@ extension HomeWireframe: HomeWireframeInterface {
     }
                 
     }
+    
+    func showCanvas() {
+        let canvasWireframe = CanvasWireframe()
+        navigationController?.pushWireframe(canvasWireframe)
+    }
+
 
