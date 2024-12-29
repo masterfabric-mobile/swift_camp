@@ -39,7 +39,7 @@
 
 - [ ] **Pickers and Controls**
 
-  - [ ] Picker @alakkaya
+  - [x] Picker @alakkaya
   - [ ] DatePicker @beyzanuravsar
   - [ ] Slider @mehmetalbyrak
   - [ ] Stepper @busragedikoglu
