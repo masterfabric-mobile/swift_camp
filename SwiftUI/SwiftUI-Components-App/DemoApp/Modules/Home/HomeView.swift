@@ -243,7 +243,7 @@ struct HomeView: View {
                             ButtonModel(title: "Go to LazyVGrid", action: { presenter.showLazyVGridView() }),
                             ButtonModel(title: "Go to Ellipse", action: { presenter.showEllipse() }),
                             ButtonModel(title: "Go to Padding", action: { presenter.showPadding() }),
-
+                            ButtonModel(title: "Go to Picker", action: { presenter.showPicker() })
 
                         ]
 

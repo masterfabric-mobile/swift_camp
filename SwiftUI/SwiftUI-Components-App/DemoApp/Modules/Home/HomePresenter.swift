@@ -118,7 +118,7 @@ final class HomePresenter: ObservableObject {
     /// Navigates to ContextMenu View
     func showBinding() {
         wireframe.showBinding()
-
+    }
     
     /// Navigates to Stepper
     func showStepper(){
@@ -138,5 +138,10 @@ final class HomePresenter: ObservableObject {
     /// Navigates to Padding
     func showPadding() {
         wireframe.showPadding()
+    }
+        
+    // Navigates to Picker
+    func showPicker() {
+            wireframe.showPicker()
     }
 }

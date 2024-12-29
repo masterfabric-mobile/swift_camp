@@ -45,7 +45,7 @@ extension HomeWireframe: HomeWireframeInterface {
         let sectionWireframe = SectionWireframe()
         navigationController?.pushWireframe(sectionWireframe)
     }
-    
+
     func showHStack() {
         let hStackWireframe = HStackWireframe()
         navigationController?.pushWireframe(hStackWireframe)
@@ -59,17 +59,17 @@ extension HomeWireframe: HomeWireframeInterface {
         let frameWireframe = FrameWireframe()
         navigationController?.pushWireframe(frameWireframe)
     }
-    
+
     func showScrollView() {
         let scrollViewWireframe = ScrollViewWireframe()
         navigationController?.pushWireframe(scrollViewWireframe)
     }
-    
+
     func showNavigationView() {
         let navigationWireframe = NavigationWireframe()
         navigationController?.pushWireframe(navigationWireframe)
     }
-    
+
     func showTransaction() {
         let transactionWireframe = TransactionWireframe()
         navigationController?.pushWireframe(transactionWireframe)
@@ -80,14 +80,11 @@ extension HomeWireframe: HomeWireframeInterface {
         navigationController?.pushWireframe(lazyHGridWireframe)
     }
 
-    
-
-    
     func showLazyVStackView() {
         let lazyVStackViewWireframe = LazyVStackWireframe()
         navigationController?.pushWireframe(lazyVStackViewWireframe)
     }
-    
+
     func showMatchedGeometryEffect() {
         let matchedGeometryEffectWireframe = MatchedGeometryEffectWireframe()
         navigationController?.pushWireframe(matchedGeometryEffectWireframe)
@@ -110,44 +107,44 @@ extension HomeWireframe: HomeWireframeInterface {
         navigationController?.pushWireframe(opacityWireframe)
     }
 
-
-    
-    
     func showSecureField() {
         let secureFieldWireframe = SecureFieldWireframe()
         navigationController?.pushWireframe(secureFieldWireframe)
     }
-    
-    
+
     func showContextMenu() {
-     let contextMenuWireframe = ContextMenuWireframe()
-     navigationController?.pushWireframe(contextMenuWireframe)
+        let contextMenuWireframe = ContextMenuWireframe()
+        navigationController?.pushWireframe(contextMenuWireframe)
     }
 
     func showBinding() {
-     let bindingWireframe = BindingWireframe()
-     navigationController?.pushWireframe(bindingWireframe)
+        let bindingWireframe = BindingWireframe()
+        navigationController?.pushWireframe(bindingWireframe)
+    }
 
-    
     func showStepper() {
         let stepperWireframe = StepperWireframe()
         navigationController?.pushWireframe(stepperWireframe)
     }
-    
+
     func showLazyVGridView() {
         let lazyVGridViewWireframe = LazyVGridWireframe()
         navigationController?.pushWireframe(lazyVGridViewWireframe)
 
     }
-    
+
     func showEllipse() {
         let ellipseWireframe = EllipseWireframe()
         navigationController?.pushWireframe(ellipseWireframe)
     }
-    
+
     func showPadding() {
         let paddingWireframe = PaddingWireframe()
         navigationController?.pushWireframe(paddingWireframe)
     }
 
+    func showPicker() {
+        let pickerWireframe = PickerWireframe()
+        navigationController?.pushWireframe(pickerWireframe)
+    }
 }
