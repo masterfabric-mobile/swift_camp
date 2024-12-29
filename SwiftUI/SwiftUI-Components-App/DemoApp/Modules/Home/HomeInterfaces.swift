@@ -32,8 +32,6 @@ protocol HomeWireframeInterface: WireframeInterface {
     func showStepper()
 
     func showLazyVGridView()
-    func showEllipse()
-    func showPadding()
-    func showPicker()
+    func showCanvas()
 
 }

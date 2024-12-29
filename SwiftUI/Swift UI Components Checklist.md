@@ -103,7 +103,7 @@
   - [ ] Spacer @alakkaya
   - [ ] Divider @busragedikoglu
   - [ ] GeometryReader @yuceel
-  - [ ] Canvas @turhanGoksu
+  - [x] Canvas @turhanGoksu
   - [ ] TimelineView @beyzanuravsar
   - [ ] Map @beyzanuravsar
   - [ ] VideoPlayer @ayberkgorgun

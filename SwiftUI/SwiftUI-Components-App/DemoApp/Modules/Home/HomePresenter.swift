@@ -108,40 +108,23 @@ final class HomePresenter: ObservableObject {
     func showSecureField() {
         wireframe.showSecureField()
     }
-
-    /// Navigates to ContextMenu View
-    func showContextMenu() {
-        wireframe.showContextMenu()
+    
+     /// Navigates to ContextMenu View
+     func showContextMenu() {
+         wireframe.showContextMenu()
+     }
+    
+    /// Navigates to Stepper
+    func showStepper(){
+        wireframe.showStepper()
+    }
+    
+    func showLazyVGridView() {
+        wireframe.showLazyVGridView()
+    }
+    
+    func showCanvas() {
+        wireframe.showCanvas()
     }
 
-    /// Navigates to ContextMenu View
-    func showBinding() {
-        wireframe.showBinding()
-    }
-
-
-/// Navigates to Stepper
-func showStepper() {
-    wireframe.showStepper()
 }
-
-func showLazyVGridView() {
-    wireframe.showLazyVGridView()
-
-}
-
-/// Navigates to Ellipse
-func showEllipse() {
-    wireframe.showEllipse()
-}
-
-/// Navigates to Padding
-func showPadding() {
-    wireframe.showPadding()
-}
-
-// Navigates to Picker
-func showPicker() {
-    wireframe.showPicker()
-}
-
