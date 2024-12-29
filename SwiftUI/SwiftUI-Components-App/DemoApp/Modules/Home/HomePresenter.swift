@@ -92,6 +92,23 @@ final class HomePresenter: ObservableObject {
     func showImage() {
         wireframe.showImage()
     }
+    }
+    
+    
+    /// Navigates to LazyVStack
+    func showLazyVStackView() {
+        wireframe.showLazyVStackView()
+    }
+    
+    /// Navigates to MatchedGeometryEffectView
+    func showMatchedGeometryEffect(){
+        wireframe.showMatchedGeometryEffect()
+        
+    }
+    /// Navigates to Image
+    func showImage() {
+        wireframe.showImage()
+    }
     /// Navigates to Image
     func showMenuButton() {
         wireframe.showMenuButton()
@@ -116,8 +133,16 @@ final class HomePresenter: ObservableObject {
     }
     
     /// Navigates to ContextMenu View
+    func showContextMenu() {
+        wireframe.showContextMenu()
+    }
+    
+    /// Navigates to ContextMenu View
     func showBinding() {
         wireframe.showBinding()
+    }
+        
+        /// Navigates to Stepper
     }
         
         /// Navigates to Stepper
@@ -125,32 +150,29 @@ final class HomePresenter: ObservableObject {
         wireframe.showStepper()
     }
         
+        
     func showLazyVGridView() {
         wireframe.showLazyVGridView()
             
+            
     }
+        
         
     /// Navigates to Ellipse
     func showEllipse(){
         wireframe.showEllipse()
     }
         
+        
     /// Navigates to Padding
     func showPadding() {
         wireframe.showPadding()
     }
         
+        
     func showCanvas() {
         wireframe.showCanvas()
     }
-    
-    func showPicker() {
-        wireframe.showPicker()
-    }
-    
-    func showCanvas() {
-        wireframe.showCanvas()
-    }
-
+        
 }
 

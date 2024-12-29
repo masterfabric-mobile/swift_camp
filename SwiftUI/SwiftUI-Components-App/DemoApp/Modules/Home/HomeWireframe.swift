@@ -22,24 +22,20 @@ extension HomeWireframe: HomeWireframeInterface {
         navigationController?.pushWireframe(vStackWireframe)
     }
     
-    
     func showZStack() {
         let zStackWireframe = ZStackWireframe()
         navigationController?.pushWireframe(zStackWireframe)
     }
-    
     
     func showContentView() {
         let contentWireframe = ContentWireframe()
         navigationController?.pushWireframe(contentWireframe)
     }
     
-    
     func showColorPicker() {
         let colorPickerWireframe = ColorPickerWireframe()
         navigationController?.pushWireframe(colorPickerWireframe)
     }
-    
     
     func showRectangle() {
         let rectangleWireframe = RectangleWireframe()
@@ -55,12 +51,10 @@ extension HomeWireframe: HomeWireframeInterface {
         navigationController?.pushWireframe(hStackWireframe)
     }
     
-    
     func showNavigationStack() {
         let navigationStackWireframe = NavigationStackWireframe()
         navigationController?.pushWireframe(navigationStackWireframe)
     }
-    
     
     func showFrame() {
         let frameWireframe = FrameWireframe()
@@ -82,7 +76,6 @@ extension HomeWireframe: HomeWireframeInterface {
         navigationController?.pushWireframe(transactionWireframe)
     }
     
-    
     func showLazyHGrid() {
         let lazyHGridWireframe = LazyHGridWireframe()
         navigationController?.pushWireframe(lazyHGridWireframe)
@@ -102,18 +95,15 @@ extension HomeWireframe: HomeWireframeInterface {
         navigationController?.pushWireframe(imageWireframe)
     }
     
-    
     func showMenuButton() {
         let menuButtonWireframe = MenuButtonWireframe()
         navigationController?.pushWireframe(menuButtonWireframe)
     }
     
-    
     func showCircle() {
         let circleWireframe = CircleWireframe()
         navigationController?.pushWireframe(circleWireframe)
     }
-    
     
     func showOpacity() {
         let opacityWireframe = OpacityWireframe()
@@ -128,8 +118,9 @@ extension HomeWireframe: HomeWireframeInterface {
     func showContextMenu() {
         let contextMenuWireframe = ContextMenuWireframe()
         navigationController?.pushWireframe(contextMenuWireframe)
+        let contextMenuWireframe = ContextMenuWireframe()
+        navigationController?.pushWireframe(contextMenuWireframe)
     }
-    
     
     func showBinding() {
         let bindingWireframe = BindingWireframe()
@@ -161,17 +152,11 @@ extension HomeWireframe: HomeWireframeInterface {
             let canvasWireframe = CanvasWireframe()
             navigationController?.pushWireframe(canvasWireframe)
         }
-        
-    func showPicker() {
-        let pickerWireframe = PickerWireframe()
-        navigationController?.pushWireframe(pickerWireframe)
-    }
+
+        func showPicker() {
+            let pickerWireframe = PickerWireframe()
+            navigationController?.pushWireframe(pickerWireframe)
+        }
                 
     }
-    
-    func showCanvas() {
-        let canvasWireframe = CanvasWireframe()
-        navigationController?.pushWireframe(canvasWireframe)
-    }
-
 
