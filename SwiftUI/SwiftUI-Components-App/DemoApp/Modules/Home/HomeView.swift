@@ -208,19 +208,22 @@ struct HomeView: View {
                             ButtonModel(
 
                                 title: "Go to LazyHGrid",
-                                action: { presenter.showLazyHGrid()
+                                action: {
+                                    presenter.showLazyHGrid()
                                 }),
 
                             ButtonModel(
                                 title: "Go to LazyVStack",
-                                action: { presenter.showLazyVStackView()
+                                action: {
+                                    presenter.showLazyVStackView()
                                 }),
-                            
+
                             ButtonModel(
                                 title: "Go to MatchedGeometryEffect",
-                                action: {presenter.showMatchedGeometryEffect()
+                                action: {
+                                    presenter.showMatchedGeometryEffect()
                                 }),
-                                
+
                             ButtonModel(
                                 title: "Go to Image",
                                 action: { presenter.showImage() }),
@@ -234,17 +237,25 @@ struct HomeView: View {
                                 title: "Go to Opacity",
                                 action: { presenter.showOpacity() }),
 
-                            ButtonModel(title: "Go to Secure Field", action: { presenter.showSecureField() }),
-                            ButtonModel(title: "Go to ContextMenu", action: { presenter.showContextMenu()}),
+                            ButtonModel(
+                                title: "Go to Secure Field", action: { presenter.showSecureField() }
+                            ),
+                            ButtonModel(
+                                title: "Go to ContextMenu", action: { presenter.showContextMenu() }),
 
-                            ButtonModel(title: "Go to Binding", action: { presenter.showBinding()}),
+                            ButtonModel(
+                                title: "Go to Binding", action: { presenter.showBinding() }),
 
-                            ButtonModel(title: "Go to Stepper", action: { presenter.showStepper() }),
-                            ButtonModel(title: "Go to LazyVGrid", action: { presenter.showLazyVGridView() }),
-                            ButtonModel(title: "Go to Ellipse", action: { presenter.showEllipse() }),
-                            ButtonModel(title: "Go to Padding", action: { presenter.showPadding() }),
+                            ButtonModel(
+                                title: "Go to Stepper", action: { presenter.showStepper() }),
+                            ButtonModel(
+                                title: "Go to LazyVGrid", action: { presenter.showLazyVGridView() }),
+                            ButtonModel(
+                                title: "Go to Ellipse", action: { presenter.showEllipse() }),
+                            ButtonModel(
+                                title: "Go to Padding", action: { presenter.showPadding() }),
                             ButtonModel(title: "Go to Picker", action: { presenter.showPicker() }),
-                            ButtonModel(title: "Go to RotationEffect", action: { presenter.showRotationEffect()})
+
                         ]
 
                         ForEach(buttons) { button in
@@ -394,4 +405,3 @@ struct HomeView: View {
     struct PullRequest: Decodable {}
     struct Branch: Decodable {}
 }
-

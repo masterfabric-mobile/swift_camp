@@ -24,19 +24,16 @@ protocol HomeWireframeInterface: WireframeInterface {
     func showCircle()
     func showOpacity()
 
-
     func showSecureField()
     func showContextMenu()
 
     func showBinding()
 
     func showStepper()
-    
+
     func showLazyVGridView()
     func showEllipse()
     func showPadding()
     func showPicker()
-    func showRotationEffect()
-
 
 }
