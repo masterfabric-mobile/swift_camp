@@ -33,5 +33,7 @@ protocol HomeWireframeInterface: WireframeInterface {
 
     func showLazyVGridView()
     func showCanvas()
-
+    func showEllipse()
+    func showPadding()
+    func showPicker()
 }

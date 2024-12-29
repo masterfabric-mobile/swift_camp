@@ -161,6 +161,11 @@ extension HomeWireframe: HomeWireframeInterface {
             let canvasWireframe = CanvasWireframe()
             navigationController?.pushWireframe(canvasWireframe)
         }
+        
+    func showPicker() {
+        let pickerWireframe = PickerWireframe()
+        navigationController?.pushWireframe(pickerWireframe)
+    }
                 
     }
 

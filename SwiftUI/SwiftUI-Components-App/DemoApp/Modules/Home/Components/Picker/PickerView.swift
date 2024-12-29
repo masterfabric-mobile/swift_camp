@@ -6,24 +6,23 @@ struct PickerView: View {
     let options = ["Option 1", "Option 2", "Option 3"]
     
     var body: some View {
-        VStack(spacing: 20) {
-            // Back button with consistent style
+        VStack(spacing: 10) {
             Button(action: presenter.goBack) {
                 Image(systemName: "chevron.left")
                     .font(.title2)
-                    .padding()
+                    .padding(10)
                     .background(Color.gray.opacity(0.2))
                     .clipShape(Circle())
             }
             .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(.horizontal, 10)
             
             Spacer()
             
             Text("Select an Option")
                 .font(.headline)
-                .padding()
+                .padding(10)
             
-            // Segmented Picker
             Picker("Options", selection: $selectedOption) {
                 ForEach(0..<options.count) { index in
                     Text(options[index])
@@ -31,9 +30,8 @@ struct PickerView: View {
                 }
             }
             .pickerStyle(SegmentedPickerStyle())
-            .padding()
+            .padding(.horizontal, 10)
             
-            // Wheel Picker
             Picker("Options", selection: $selectedOption) {
                 ForEach(0..<options.count) { index in
                     Text(options[index])
@@ -41,9 +39,8 @@ struct PickerView: View {
                 }
             }
             .pickerStyle(WheelPickerStyle())
-            .padding()
+            .padding(.vertical, 10)
             
-            // Menu Picker
             Picker("Options", selection: $selectedOption) {
                 ForEach(0..<options.count) { index in
                     Text(options[index])
@@ -51,15 +48,15 @@ struct PickerView: View {
                 }
             }
             .pickerStyle(MenuPickerStyle())
-            .padding()
+            .padding(10)
             
             Text("Selected: \(options[selectedOption])")
                 .font(.headline)
                 .foregroundColor(.blue)
-                .padding()
+                .padding(10)
             
             Spacer()
         }
-        .padding()
+        .padding(10)
     }
 }

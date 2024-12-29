@@ -143,6 +143,9 @@ final class HomePresenter: ObservableObject {
     func showCanvas() {
         wireframe.showCanvas()
     }
-        
+    
+    func showPicker() {
+        wireframe.showPicker()
+    }
 }
 
