@@ -118,7 +118,7 @@ final class HomePresenter: ObservableObject {
     func showBinding() {
         wireframe.showBinding()
     }
-}
+
 
 /// Navigates to Stepper
 func showStepper() {
@@ -144,3 +144,4 @@ func showPadding() {
 func showPicker() {
     wireframe.showPicker()
 }
+
