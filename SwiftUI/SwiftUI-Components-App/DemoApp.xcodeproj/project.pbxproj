@@ -13,6 +13,7 @@
 		6E00E5EF2D22245400944B6C /* OneSignalFramework in Frameworks */ = {isa = PBXBuildFile; productRef = 6E00E5EE2D22245400944B6C /* OneSignalFramework */; };
 		6E00E5F12D22245400944B6C /* OneSignalInAppMessages in Frameworks */ = {isa = PBXBuildFile; productRef = 6E00E5F02D22245400944B6C /* OneSignalInAppMessages */; };
 		6E0A98612D2301DD00B6EB14 /* OneSignalLocation in Frameworks */ = {isa = PBXBuildFile; productRef = 6E0A98602D2301DD00B6EB14 /* OneSignalLocation */; };
+		6E64678E2D25AE460098A371 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 6E64678D2D25AE460098A371 /* SQLite */; };
 		6EB987182D2573A8000394DF /* SwiftyBeaver in Frameworks */ = {isa = PBXBuildFile; productRef = 6EB987172D2573A8000394DF /* SwiftyBeaver */; };
 		6EB9871D2D2574CE000394DF /* EnvironmentConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6EB9871C2D2574C6000394DF /* EnvironmentConfig.plist */; };
 		7F313A07292BC7E90048C74C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F313A06292BC7E90048C74C /* AppDelegate.swift */; };
@@ -97,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E64678E2D25AE460098A371 /* SQLite in Frameworks */,
 				6E00E5F12D22245400944B6C /* OneSignalInAppMessages in Frameworks */,
 				6E00E5EF2D22245400944B6C /* OneSignalFramework in Frameworks */,
 				6EB987182D2573A8000394DF /* SwiftyBeaver in Frameworks */,
@@ -262,6 +264,7 @@
 				6E00E5F02D22245400944B6C /* OneSignalInAppMessages */,
 				6E0A98602D2301DD00B6EB14 /* OneSignalLocation */,
 				6EB987172D2573A8000394DF /* SwiftyBeaver */,
+				6E64678D2D25AE460098A371 /* SQLite */,
 			);
 			productName = DemoApp;
 			productReference = 7F313A03292BC7E90048C74C /* Swift Camp.app */;
@@ -298,6 +301,7 @@
 				7F313A2D292BC8C70048C74C /* XCRemoteSwiftPackageReference "RxSwift" */,
 				6E00E5EB2D22245400944B6C /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */,
 				6EB987162D2573A8000394DF /* XCRemoteSwiftPackageReference "SwiftyBeaver" */,
+				6E64678C2D25AE460098A371 /* XCRemoteSwiftPackageReference "SQLite.swift" */,
 			);
 			productRefGroup = 7F313A04292BC7E90048C74C /* Products */;
 			projectDirPath = "";
@@ -669,6 +673,14 @@
 				minimumVersion = 5.2.9;
 			};
 		};
+		6E64678C2D25AE460098A371 /* XCRemoteSwiftPackageReference "SQLite.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stephencelis/SQLite.swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.15.3;
+			};
+		};
 		6EB987162D2573A8000394DF /* XCRemoteSwiftPackageReference "SwiftyBeaver" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftyBeaver/SwiftyBeaver.git";
@@ -707,6 +719,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 6E00E5EB2D22245400944B6C /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */;
 			productName = OneSignalLocation;
+		};
+		6E64678D2D25AE460098A371 /* SQLite */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6E64678C2D25AE460098A371 /* XCRemoteSwiftPackageReference "SQLite.swift" */;
+			productName = SQLite;
 		};
 		6EB987172D2573A8000394DF /* SwiftyBeaver */ = {
 			isa = XCSwiftPackageProductDependency;

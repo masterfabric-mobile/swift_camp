@@ -12,5 +12,7 @@
 	<string>https://api.github.com/repos/masterfabric-mobile/swift_camp</string>
 	<key>ONESIGNAL_APP_ID</key>
 	<string>9663e4ef-0e81-4ff2-8ae0-d37dc5225b9a</string>
+	<key>ENCRYPTION_KEY</key>
+	<string>SMyy9Fb2Os1RNinTQpm5TaqcwBNaIFmg</string>
 </dict>
 </plist>

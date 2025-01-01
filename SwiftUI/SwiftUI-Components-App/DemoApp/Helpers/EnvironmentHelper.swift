@@ -107,6 +107,20 @@ struct EnvironmentHelper {
             return "https://api.github.com/repos/default"
         }
     }
+    
+    /// Returns the encryption key for the current environment.
+    var encryptionKey: String {
+        do {
+            guard let key = infoDictionary["ENCRYPTION_KEY"] as? String else {
+                throw EnvironmentError.missingKey(key: "ENCRYPTION_KEY")
+            }
+            LoggerHelper.shared.debug("🔒 Encryption Key: \(key)")
+            return key
+        } catch {
+            LoggerHelper.shared.error("⚠️ Error fetching ENCRYPTION_KEY: \(error.localizedDescription). Defaulting to empty encryption key.")
+            return "default-encryption-key"
+        }
+    }
 }
 
 // MARK: - Environment Errors
