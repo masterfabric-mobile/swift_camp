@@ -47,7 +47,40 @@ final class HomeInteractor: HomeInteractorInterface {
             completion(repoInfo)
         }
     }
-        
+    
+    // MARK: - Time Helper
+
+    /// Manages the scheduled timer for updating date and time.
+    private var timer: Timer?
+
+    /// The current date and time string.
+    private var currentDateTime: String = ""
+
+    /// Starts updating the current date and time.
+    func startUpdatingDateTime() {
+        updateDateTime() // Initial update
+        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] _ in
+            self?.updateDateTime()
+        }
+    }
+
+    /// Stops updating the current date and time.
+    func stopUpdatingDateTime() {
+        timer?.invalidate()
+        timer = nil
+    }
+
+    /// Returns the current date and time as a string.
+    /// - Returns: The current date and time in the format `yyyy-MM-dd HH:mm:ss`.
+    func getCurrentDateTime() -> String {
+        return currentDateTime
+    }
+
+    /// Updates the current date and time string.
+    private func updateDateTime() {
+        currentDateTime = TimeHelper.shared.getCurrentDateTime(format: "yyyy-MM-dd HH:mm:ss")
+    }
+    
     // MARK: - Private Helper Methods
     
     /// Fetches paginated data from a given endpoint, handling multiple pages of results.

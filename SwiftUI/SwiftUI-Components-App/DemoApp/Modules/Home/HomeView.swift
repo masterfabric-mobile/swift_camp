@@ -14,9 +14,9 @@ struct HomeView: View {
 
         NavigationView {
             VStack(spacing: 0) {
-                
                 // AppBar with dynamic information
                 HStack {
+
                     VStack(alignment: .leading) {
                         Text("Version: 1.0.0 | Firmware: \(deviceInfo)")
                             .font(.footnote)
@@ -26,7 +26,29 @@ struct HomeView: View {
                             .font(.footnote)
                     }
                     .foregroundColor(.black)
+                    
                     Spacer()
+                    
+                    HStack(spacing: 10) {
+                        VStack(alignment: .leading, spacing: 5) {                        // Date Icon and Label
+                            HStack(spacing: 5) {
+                                Image(systemName: "calendar")
+                                    .foregroundColor(.blue)
+                                Text(TimeHelper.shared.getCurrentDate(format: "yyyy-MM-dd"))
+                                    .font(.subheadline)
+                                    .foregroundColor(.black)
+                            }
+
+                            // Time Icon and Label
+                            HStack(spacing: 5) {
+                                Image(systemName: "clock")
+                                    .foregroundColor(.blue)
+                                Text(presenter.currentTime)
+                                    .font(.subheadline)
+                                    .foregroundColor(.black)
+                            }
+                        }
+                    }
                 }
                 .padding()
                 
@@ -378,6 +400,8 @@ struct HomeView: View {
             .background(Color(UIColor.systemBackground))  // Adapts to light/dark mode
             .onAppear {
                 presenter.fetchRepoInfo()
+                presenter.startUpdatingTime()
+            }.onDisappear {
             }
         }.alert(isPresented: $presenter.showDialog) {
             if let contributor = presenter.selectedContributor {

@@ -7,10 +7,17 @@ final class HomePresenter: ObservableObject {
     @Published var repoInfo: GithubRepoInfo?
     @Published var selectedContributor: Contributor?
     @Published var showDialog = false
+    @Published var currentTime: String = ""
+
 
     // MARK: - Private properties -
     private let interactor: HomeInteractorInterface
     private let wireframe: HomeWireframeInterface
+    internal var timer: Timer?
+    private var timerSubscription: AnyCancellable?
+    private func updateTime() {
+        currentTime = TimeHelper.shared.getCurrentTime(format: "HH:mm:ss")
+    }
 
     // MARK: - Lifecycle -
 
@@ -25,6 +32,24 @@ final class HomePresenter: ObservableObject {
                 self?.repoInfo = info
             }
         }
+    }
+
+    // MARK: Time
+    /// Starts the timer to update the current time every second
+    func startUpdatingTime() {
+        updateTime() // Initial update
+        timerSubscription = Timer.publish(every: 1, on: .main, in: .common)
+            .autoconnect()
+            .sink { [weak self] _ in
+                // Ensure that the update happens on the main thread
+                DispatchQueue.main.async {
+                    self?.updateTime()
+                }
+            }
+    }
+    /// Stops the timer for updating the current time
+    func stopUpdatingTime() {
+        timerSubscription?.cancel()
     }
     
     /// Navigates to VStackView
@@ -302,5 +327,10 @@ final class HomePresenter: ObservableObject {
     
     func timeLineView() {
         wireframe.showTimeLineView()
+    }
+    
+    /// Clean up the timer to avoid memory leaks
+    deinit {
+        stopUpdatingTime()
     }
 }
