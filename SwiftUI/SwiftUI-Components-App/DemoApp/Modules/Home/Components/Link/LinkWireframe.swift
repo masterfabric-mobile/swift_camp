@@ -17,7 +17,7 @@ final class LinkWireframe: BaseWireframe<LazyHostingViewController<LinkView>>, L
     }
 
     func navigateToNewLink() {
-        let newLinkViewController = UIViewController() // Yeni ekran için placeholder
+        let newLinkViewController = UIViewController() // new placeholder
         navigationController?.pushViewController(newLinkViewController, animated: true)
     }
 }
