@@ -42,6 +42,10 @@ struct FocusStateView: View {
                             .padding()
                             .background(Color(UIColor.systemGray6))
                             .cornerRadius(10)
+                              .overlay(
+                                RoundedRectangle(cornerRadius: 10)
+                                    .stroke(focusedField == .username ? Color.blue : Color.clear, lineWidth: 2)
+                            )
                             .focused($focusedField, equals: .username)
                             .submitLabel(.next)
                             .onSubmit {
@@ -58,6 +62,10 @@ struct FocusStateView: View {
                             .padding()
                             .background(Color(UIColor.systemGray6))
                             .cornerRadius(10)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 10)
+                                    .stroke(focusedField == .password ? Color.blue : Color.clear, lineWidth: 2)
+                            )
                             .focused($focusedField, equals: .password)
                             .submitLabel(.done)
                             .onSubmit {
