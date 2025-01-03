@@ -405,4 +405,8 @@ final class HomePresenter: ObservableObject {
     func showPopover() {
         wireframe.showPopover()
     }
+
+    func showFocusState() {
+        wireframe.showFocusState()
+    }
 }

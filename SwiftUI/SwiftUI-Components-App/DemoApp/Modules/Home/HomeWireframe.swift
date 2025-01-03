@@ -386,4 +386,9 @@ extension HomeWireframe: HomeWireframeInterface {
         let popoverWireframe = PopoverWireframe()
         navigationController?.pushWireframe(popoverWireframe)
     }
+
+    func showFocusState() {
+        let focusStateWireframe = FocusStateWireframe()
+        navigationController?.pushWireframe(focusStateWireframe)
+    }
 }

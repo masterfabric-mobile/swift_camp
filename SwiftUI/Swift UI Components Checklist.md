@@ -92,7 +92,7 @@
   - [x] ActionSheet @beyzanuravsar
   - [ ] ConfirmationDialog @OnurArslan0
   - [ ] Sheet @AylinManav
-  - [ ] Popover @alakkaya
+  - [x] Popover @alakkaya
 
 - [ ] **Grid**
 
@@ -114,4 +114,4 @@
   - [ ] State @ayberkgorgun
   - [x] Binding @melihalkbk
   - [ ] ObservedObject @yuceel
-  - [ ] FocusState @alakkaya
+  - [x] FocusState @alakkaya
