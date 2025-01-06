@@ -20,18 +20,17 @@ struct FrameView: View {
 
                     Spacer()
 
-                    Text("Frame Modifier Playground")
-                        .font(.title)
+                    Text("Frame Playground")
+                        .font(.largeTitle)
                         .fontWeight(.bold)
                         .foregroundColor(.primary)
                 }
                 .padding(.horizontal)
+                
+                Spacer()
 
                 // Centered Square Frame with Rectangle
                 VStack(spacing: 20) {
-                    Text("Dynamic Square")
-                        .font(.headline)
-                        .foregroundColor(.primary)
 
                     ZStack {
                         // Fixed square boundary with corner radius

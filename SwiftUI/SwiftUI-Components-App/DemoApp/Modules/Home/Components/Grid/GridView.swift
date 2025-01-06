@@ -25,7 +25,7 @@ struct GridView: View {
                     Spacer()
 
                     Text("Dynamic Grid View")
-                        .font(.title)
+                        .font(.largeTitle)
                         .fontWeight(.bold)
                         .foregroundColor(.primary)
                 }

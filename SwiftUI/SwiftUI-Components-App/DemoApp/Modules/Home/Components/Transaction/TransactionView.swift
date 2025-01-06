@@ -22,7 +22,7 @@ struct TransactionView: View {
                     Spacer()
 
                     Text("Transaction Animation")
-                        .font(.title)
+                        .font(.largeTitle)
                         .fontWeight(.bold)
                         .foregroundColor(.primary)
                 }

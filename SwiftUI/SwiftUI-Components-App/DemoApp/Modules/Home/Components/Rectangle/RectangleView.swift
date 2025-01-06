@@ -21,7 +21,7 @@ struct RectangleView: View {
                     Spacer()
 
                     Text("Rectangle Playground")
-                        .font(.title)
+                        .font(.largeTitle)
                         .fontWeight(.bold)
                         .foregroundColor(.primary)
                 }

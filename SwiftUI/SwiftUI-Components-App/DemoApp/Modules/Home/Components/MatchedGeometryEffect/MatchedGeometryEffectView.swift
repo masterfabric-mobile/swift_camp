@@ -22,7 +22,7 @@ struct MatchedGeometryEffectView: View {
                     Spacer()
 
                     Text("Matched Geometry Effect")
-                        .font(.title)
+                        .font(.largeTitle)
                         .fontWeight(.bold)
                         .foregroundColor(.primary)
                 }

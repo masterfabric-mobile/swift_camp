@@ -110,8 +110,8 @@
   - [ ] ProgressIndicator @ayberkgorgun
   - [ ] AnyView @ayberkgorgun
   - [ ] Environment @ayberkgorgun
-  - [ ] EnvironmentObject @ayberkgorgun
-  - [ ] State @ayberkgorgun
+  - [x] EnvironmentObject @turhanGoksu
+  - [x] State @turhanGoksu
   - [x] Binding @melihalkbk
   - [ ] ObservedObject @yuceel
   - [x] FocusState @alakkaya
