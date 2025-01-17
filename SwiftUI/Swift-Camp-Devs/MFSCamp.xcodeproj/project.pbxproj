@@ -31,7 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7F313A03292BC7E90048C74C /* SwiftCampDevs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftCampDevs.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F313A03292BC7E90048C74C /* MFSCamp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MFSCamp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F313A06292BC7E90048C74C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F313A0F292BC7EA0048C74C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7F313A12292BC7EA0048C74C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -84,7 +84,7 @@
 		7F313A04292BC7E90048C74C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7F313A03292BC7E90048C74C /* SwiftCampDevs.app */,
+				7F313A03292BC7E90048C74C /* MFSCamp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -161,9 +161,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7F313A02292BC7E90048C74C /* SwiftCampDevs */ = {
+		7F313A02292BC7E90048C74C /* MFSCamp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7F313A17292BC7EA0048C74C /* Build configuration list for PBXNativeTarget "SwiftCampDevs" */;
+			buildConfigurationList = 7F313A17292BC7EA0048C74C /* Build configuration list for PBXNativeTarget "MFSCamp" */;
 			buildPhases = (
 				7F3139FF292BC7E90048C74C /* Sources */,
 				7F313A00292BC7E90048C74C /* Frameworks */,
@@ -178,14 +178,14 @@
 				41AA93FB2D3257CC0007EFFD /* Helpers */,
 				41AA94052D3257F10007EFFD /* Utils */,
 			);
-			name = SwiftCampDevs;
+			name = MFSCamp;
 			packageProductDependencies = (
 				7F313A2E292BC8C70048C74C /* RxCocoa */,
 				7F313A30292BC8C70048C74C /* RxRelay */,
 				7F313A32292BC8C70048C74C /* RxSwift */,
 			);
 			productName = DemoApp;
-			productReference = 7F313A03292BC7E90048C74C /* SwiftCampDevs.app */;
+			productReference = 7F313A03292BC7E90048C74C /* MFSCamp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -203,7 +203,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 7F3139FE292BC7E90048C74C /* Build configuration list for PBXProject "SwiftCampDevs" */;
+			buildConfigurationList = 7F3139FE292BC7E90048C74C /* Build configuration list for PBXProject "MFSCamp" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -219,7 +219,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7F313A02292BC7E90048C74C /* SwiftCampDevs */,
+				7F313A02292BC7E90048C74C /* MFSCamp */,
 			);
 		};
 /* End PBXProject section */
@@ -393,11 +393,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 426TL8YMQ8;
+				DEVELOPMENT_TEAM = 4GW994398K;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SwiftCampDevs/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MFSCamp;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -410,6 +412,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.masterfabric.swiftdevs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -425,11 +428,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 426TL8YMQ8;
+				DEVELOPMENT_TEAM = 4GW994398K;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SwiftCampDevs/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MFSCamp;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -442,6 +447,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.masterfabric.swiftdevs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -455,7 +461,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7F3139FE292BC7E90048C74C /* Build configuration list for PBXProject "SwiftCampDevs" */ = {
+		7F3139FE292BC7E90048C74C /* Build configuration list for PBXProject "MFSCamp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7F313A15292BC7EA0048C74C /* Debug */,
@@ -464,7 +470,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7F313A17292BC7EA0048C74C /* Build configuration list for PBXNativeTarget "SwiftCampDevs" */ = {
+		7F313A17292BC7EA0048C74C /* Build configuration list for PBXNativeTarget "MFSCamp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7F313A18292BC7EA0048C74C /* Debug */,

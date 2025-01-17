@@ -16,9 +16,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7F313A02292BC7E90048C74C"
-               BuildableName = "SwiftCampDevs.app"
-               BlueprintName = "SwiftCampDevs"
-               ReferencedContainer = "container:SwiftCampDevs.xcodeproj">
+               BuildableName = "MFSCamp.app"
+               BlueprintName = "MFSCamp"
+               ReferencedContainer = "container:MFSCamp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7F313A02292BC7E90048C74C"
-            BuildableName = "SwiftCampDevs.app"
-            BlueprintName = "SwiftCampDevs"
-            ReferencedContainer = "container:SwiftCampDevs.xcodeproj">
+            BuildableName = "MFSCamp.app"
+            BlueprintName = "MFSCamp"
+            ReferencedContainer = "container:MFSCamp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7F313A02292BC7E90048C74C"
-            BuildableName = "SwiftCampDevs.app"
-            BlueprintName = "SwiftCampDevs"
-            ReferencedContainer = "container:SwiftCampDevs.xcodeproj">
+            BuildableName = "MFSCamp.app"
+            BlueprintName = "MFSCamp"
+            ReferencedContainer = "container:MFSCamp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
