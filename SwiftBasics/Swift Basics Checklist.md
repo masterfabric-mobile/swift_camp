@@ -73,15 +73,15 @@
   - [X] Using Enum with Switch
 
 - [ ] **Protocols and Extensions**
-  - [ ] Protocol Definition
-  - [ ] Protocol Adoption
-  - [ ] Protocol-Oriented Programming
-  - [ ] Extensions
+  - [x] Protocol Definition
+  - [x] Protocol Adoption
+  - [x] Protocol-Oriented Programming
+  - [x] Extensions
 
 - [ ] **Error Handling**
   - [X] Do-Catch Blocks
   - [X] Throwing Functions
-  - [ ] Try, Try?, Try!
+  - [x] Try, Try?, Try!
 
 - [ ] **Other Concepts**
   - [x] Optional Binding

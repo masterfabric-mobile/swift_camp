@@ -104,3 +104,47 @@ if let unwrappedInput = secondPossibleInput {   // if given input is nil, print 
 } else {
     print("secondPossibleInput is nil")
 }
+
+
+// 8. Try, Try?, Try!
+
+enum FileError: Error {
+    case fileNotFound
+    case insufficientPermissions
+}
+
+    // function to read file
+    // returns file contents if file is found
+    // throws error if file is not found or if permissions are insufficient
+func readFile(at path: String) throws -> String {
+    if path.isEmpty {
+        throw FileError.fileNotFound
+    }else if path == "restricted" {
+        throw FileError.insufficientPermissions
+    }
+    return "File contents"
+}
+
+    // 8.1 Try
+do {
+    let content = try readFile(at: "example.txt")
+    print("File content: \(content)")
+} catch FileError.fileNotFound {
+    print("Error: File not found.")
+} catch FileError.insufficientPermissions {
+    print("Error: Insufficient permissions.")
+} catch {
+    print("Error: \(error)")
+}
+
+    // 8.2 Try?
+let optionalContent = try? readFile(at: "") // Empty path returns nil
+if let content = optionalContent {
+    print("File content: \(content)")
+} else {
+    print("Error: Unable to read file.")
+}
+
+    // 8.3 Try!
+let guaranteedContent = try! readFile(at: "validPath.txt")  // Force unwrapping
+print ("File content: \(guaranteedContent)")    // Be careful! If error occurs, app will crash

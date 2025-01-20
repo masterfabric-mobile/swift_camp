@@ -44,23 +44,22 @@ With VIPER, this app achieves a structured and scalable architecture that ensure
   <li>🌍 <strong>Real-World Application</strong>: Apply acquired knowledge in practical projects to gain proficiency in the iOS development ecosystem.</li>
 </ul>
 
-## Star History
 
-<a href="https://star-history.com/#masterfabric-mobile/swift_camp&Date">
- <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=masterfabric-mobile/swift_camp&type=Date&theme=dark" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=masterfabric-mobile/swift_camp&type=Date" />
-   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=masterfabric-mobile/swift_camp&type=Date" />
- </picture>
-</a>
+## 🔆 Overall Look'n Feel 
+https://github.com/user-attachments/assets/442c22e9-214a-46fa-8ede-9f0a0a5a835a
+
 
 ## 🛠 Attributes
 
 Attributes are properties or modifiers that define the appearance, behavior, and interaction of SwiftUI components. Below is a categorized list of attributes you can apply to your views.
 
----
 
 ### 🎨 Appearance Attributes
+These attributes define the visual appearance of SwiftUI components, such as colors, shadows, and transparency.
+
+<details>
+  <summary>View Details</summary>
+
 - `foregroundColor`: Sets the color of text or shapes.
 - `background`: Adds a background to the view.
 - `shadow`: Applies a shadow effect.
@@ -68,182 +67,298 @@ Attributes are properties or modifiers that define the appearance, behavior, and
 - `opacity`: Adjusts the transparency of a view.
 - `blendMode`: Applies a blend mode to the view.
 
----
+</details>
+
+
 
 ### 📐 Layout Attributes
+These attributes help control the layout and positioning of components in a SwiftUI view hierarchy.
+
+<details>
+  <summary>View Details</summary>
+
 - `frame`: Sets the size of a view.
 - `padding`: Adds spacing around a view.
 - `offset`: Moves the view by a specified amount.
 - `alignment`: Aligns the content within a container.
 - `zIndex`: Sets the stacking order of views.
 
----
+</details>
+
+
 
 ### 🎞️ Animation Attributes
+These attributes allow you to add smooth animations and transitions to enhance user interaction in your app.
+
+<details>
+  <summary>View Details</summary>
+
 - `animation`: Adds an animation to a view.
 - `transition`: Defines how views appear/disappear.
 - `matchedGeometryEffect`: Links views for smooth animations.
 - `delay`: Adds a delay before an animation starts.
 
----
+</details>
+
+
 
 ### 👆 Interaction Attributes
+These attributes manage user interactions like gestures, taps, and hit testing in your SwiftUI views.
+
+<details>
+  <summary>View Details</summary>
+
 - `onTapGesture`: Detects a tap gesture.
 - `onLongPressGesture`: Detects a long press gesture.
 - `gesture`: Adds a custom gesture to a view.
 - `allowsHitTesting`: Enables or disables user interaction.
 
----
+</details>
+
+
 
 ### ⚙️ Functional Attributes
+These attributes provide functional capabilities like assigning identifiers, managing environment values, and enhancing accessibility.
+
+<details>
+  <summary>View Details</summary>
+
 - `id`: Assigns a unique identifier to a view.
 - `tag`: Associates a value with a view.
 - `environment`: Passes shared data to child views.
 - `accessibilityLabel`: Provides accessibility information.
 - `focusable`: Marks a view as focusable.
 
----
+</details>
+
+
 
 ### 🔧 Customization Attributes
+These attributes allow you to create reusable custom behaviors and prioritize layout preferences.
+
+<details>
+  <summary>View Details</summary>
+
 - `customModifier`: Creates reusable custom modifiers.
 - `preferenceKey`: Shares data between parent and child views.
 - `layoutPriority`: Adjusts the layout priority of a view.
 
----
+</details>
 
-Attributes allow you to fine-tune the behavior and appearance of your SwiftUI views, creating a rich and dynamic user experience.
 
 
 ## ⚙️ Project Features
 
 This document highlights all the SwiftUI components and features included in the project. Use this as a checklist to track your progress or ensure feature coverage. ✅
 
----
-
 ### 📦 View Containers
 Containers are fundamental building blocks in SwiftUI. They allow you to structure and arrange your views hierarchically.
 
-| **Container Types** | **Lazy Containers** | **Navigation & Grouping** |
-|---------------------|---------------------|----------------------------|
-| VStack              | LazyVStack         | NavigationView             |
-| HStack              | LazyHStack         | NavigationStack            |
-| ZStack              | LazyVGrid          | Group                      |
-| ScrollView          | LazyHGrid          | GroupBox                   |
-| List                |                    |                            |
+<details>
+  <summary>View Details</summary>
+  
+  - **Container Types:**
+    - VStack
+    - HStack
+    - ZStack
+    - ScrollView
+    - List
+  - **Lazy Containers:**
+    - LazyVStack
+    - LazyHStack
+    - LazyVGrid
+    - LazyHGrid
+  - **Navigation & Grouping:**
+    - NavigationView
+    - NavigationStack
+    - Group
+    - GroupBox
 
----
+</details>
+
 
 ### ✏️ Text and Images
 SwiftUI provides powerful tools for working with text and images, enabling customization and interactivity.
 
-| **Text Components** | **Interactive Fields** | **Image Components** |
-|----------------------|------------------------|-----------------------|
-| Text                | TextField             | Image                |
-| SecureField         |                      | Label                |
-| AttributedText      |                      |                       |
+<details>
+  <summary>View Details</summary>
+  
+  - **Text Components:**
+    - Text
+    - AttributedText
+    - SecureField
+  - **Interactive Fields:**
+    - TextField
+  - **Image Components:**
+    - Image
+    - Label
 
----
+</details>
+
 
 ### 🔘 Buttons
 Buttons and contextual menus enable user interaction, making your app responsive and dynamic.
 
-| **Button Types** | **Contextual Buttons** |
-|-------------------|------------------------|
-| Button           | ContextMenu           |
-| Link             | Menu                  |
-| Toggle           |                       |
+<details>
+  <summary>View Details</summary>
+  
+  - **Button Types:**
+    - Button
+    - Link
+    - Toggle
+  - **Contextual Buttons:**
+    - ContextMenu
+    - Menu
 
----
+</details>
 
 ### 🎛️ Pickers and Controls
 Pickers and controls offer flexible ways for users to input data and adjust settings.
 
-| **Pickers**    | **Adjustable Controls** | **Indicators**       |
-|----------------|------------------------|----------------------|
-| Picker         | Slider                 | ProgressView         |
-| DatePicker     | Stepper                | SegmentedControl     |
-| ColorPicker    |                       |                      |
+<details>
+  <summary>View Details</summary>
+  
+  - **Pickers:**
+    - Picker
+    - DatePicker
+    - ColorPicker
+  - **Adjustable Controls:**
+    - Slider
+    - Stepper
+  - **Indicators:**
+    - ProgressView
+    - SegmentedControl
 
----
+</details>
+
 
 ### 🔲 Shapes
 Shapes are versatile drawing primitives that can be styled and combined for custom designs.
 
-| **Basic Shapes**   | **Advanced Shapes** |
-|--------------------|---------------------|
-| Rectangle          | Path               |
-| RoundedRectangle   | CustomShape        |
-| Circle             |                   |
-| Ellipse            |                   |
-| Capsule            |                   |
+<details>
+  <summary>View Details</summary>
+  
+  - **Basic Shapes:**
+    - Rectangle
+    - RoundedRectangle
+    - Circle
+    - Ellipse
+    - Capsule
+  - **Advanced Shapes:**
+    - Path
+    - CustomShape
 
----
+</details>
 
 ### 🛠️ Modifiers
 Modifiers customize the appearance, layout, and behavior of views in SwiftUI.
 
-| **Appearance**     | **Positioning**     | **Effects**        |
-|--------------------|---------------------|--------------------|
-| Padding            | Frame              | Opacity           |
-| Background         | Offset             | ScaleEffect       |
-| ForegroundColor    |                   | RotationEffect    |
-| Shadow             |                   |                   |
+<details>
+  <summary>View Details</summary>
+  
+  - **Appearance:**
+    - Padding
+    - Background
+    - ForegroundColor
+    - Shadow
+  - **Positioning:**
+    - Frame
+    - Offset
+    - ScaleEffect
+    - RotationEffect
+  - **Effects:**
+    - Opacity
 
----
+</details>
 
 ### 🎞️ Animations
 Animations bring life to your UI, enhancing user experience with smooth transitions and dynamic effects.
 
-| **Animation Types** | **Advanced Animation** |
-|---------------------|------------------------|
-| Animation           | MatchedGeometryEffect |
-| withAnimation       | Transition            |
-| Transaction         |                      |
+<details>
+  <summary>View Details</summary>
+  
+  - **Animation Types:**
+    - Animation
+    - withAnimation
+    - Transaction
+  - **Advanced Animation:**
+    - MatchedGeometryEffect
+    - Transition
 
----
+</details>
+
 
 ### 👆 Gestures
 Gestures are essential for detecting user interactions, enabling richer touch-based experiences.
 
-| **Gestures**         | **Advanced Gestures** |
-|----------------------|-----------------------|
-| TapGesture           | MagnificationGesture |
-| LongPressGesture     | RotationGesture      |
-| DragGesture          |                      |
+<details>
+  <summary>View Details</summary>
+  
+  - **Gestures:**
+    - TapGesture
+    - LongPressGesture
+    - DragGesture
+  - **Advanced Gestures:**
+    - MagnificationGesture
+    - RotationGesture
 
----
+</details>
+
 
 ### ⚠️ Alerts and Sheets
 Alerts and sheets provide ways to display modal content or prompt the user for confirmation.
 
-| **Alerts**       | **Sheets and Dialogs**  |
-|------------------|-------------------------|
-| Alert            | Sheet                  |
-| ActionSheet      | Popover                |
-| ConfirmationDialog |                      |
+<details>
+  <summary>View Details</summary>
+  
+  - **Alerts:**
+    - Alert
+    - ConfirmationDialog
+  - **Sheets and Dialogs:**
+    - Sheet
+    - ActionSheet
+    - Popover
 
----
+</details>
 
 ### 🏗️ Grid
 Grids are used for creating complex layouts with structured rows and columns.
 
-| **Grid Types**  |
-|-----------------|
-| Grid            |
-| GridRow         |
+<details>
+  <summary>View Details</summary>
+  
+  - **Grid Types:**
+    - Grid
+    - GridRow
 
----
+</details>
+
 
 ### 🧩 Other Components
 Additional components that enhance layout, media integration, and state management.
 
-| **Layout**         | **Media**            | **State Management**    |
-|--------------------|----------------------|-------------------------|
-| Spacer            | VideoPlayer         | State                  |
-| Divider           | Map                 | Binding                |
-| GeometryReader    | ProgressIndicator   | ObservedObject         |
-| Canvas            |                     | EnvironmentObject      |
-| TimelineView      |                     | FocusState             |
+<details>
+  <summary>View Details</summary>
+  
+  - **Layout:**
+    - Spacer
+    - Divider
+    - GeometryReader
+    - Canvas
+    - TimelineView
+  - **Media:**
+    - VideoPlayer
+    - Map
+  - **State Management:**
+    - State
+    - Binding
+    - ObservedObject
+    - EnvironmentObject
+    - FocusState
+
+</details>
+
+
 
 ## 📦 Package Dependencies
 
