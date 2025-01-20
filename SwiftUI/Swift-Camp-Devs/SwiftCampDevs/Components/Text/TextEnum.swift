@@ -185,11 +185,18 @@ enum ShadowStyle {
 
 // Enum for regex patterns
 enum RegexPattern: String {
-    case email = "[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,}"
+    //case email = "[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,}"
     case phone = "\\b\\d{3}[-.]?\\d{3}[-.]?\\d{4}\\b"
     case url = "https?://[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
     case keyword = "\\b(SwiftUI|easy)\\b"
-
+    
+    case username = "^[a-zA-Z0-9_]+$"
+    case password = "^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%^&*(),.?\":{}|<>])[A-Za-z0-9!@#$%^&*(),.?\":{}|<>]{8,64}$"
+    case email = "^[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$"
+    case name = "^[a-zA-Z ]+$"
+    //case phone = "^\\+?[1-9]\\d{1,14}$" // E.164 format
+    case numeric = "^\\d+(\\.\\d+)?$"
+    
     var pattern: String {
         self.rawValue
     }

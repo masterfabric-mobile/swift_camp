@@ -1,5 +1,6 @@
 import Foundation
 import UIKit
+
 enum ValidatorType {
     case username
     case password
@@ -64,8 +65,7 @@ struct ValidatorHelper {
         if value.count > 20 {
             return "Username cannot exceed 20 characters."
         }
-        let usernameRegex = "^[a-zA-Z0-9_]+$"
-        let predicate = NSPredicate(format: "SELF MATCHES %@", usernameRegex)
+        let predicate = NSPredicate(format: "SELF MATCHES %@", RegexPattern.username.pattern)
         if !predicate.evaluate(with: value) {
             return "Username can only contain letters, numbers, and underscores. Spaces are not allowed."
         }
@@ -74,24 +74,19 @@ struct ValidatorHelper {
     
     private func validatePassword(_ value: String) -> String? {
         
-        // MARK: - Space checking control should be revised !!!
-        if value.trimmingCharacters(in: .whitespacesAndNewlines).count != value.count {
-            return "Password must not contain spaces."
+        if value.hasPrefix(" ") || value.hasSuffix(" ") || value.contains(" ") {
+            return "Password must not contain spaces "
         }
-
+        
         
         if value.isEmpty {
             return "Password cannot be empty."
         }
-
-        // Password regualar expression
-        let passwordRegex = "^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%^&*(),.?\":{}|<>])[A-Za-z0-9!@#$%^&*(),.?\":{}|<>]{8,64}$"
-
+        
         // Validating the password
-        if !NSPredicate(format: "SELF MATCHES %@", passwordRegex).evaluate(with: value) {
+        if !NSPredicate(format: "SELF MATCHES %@", RegexPattern.password.pattern).evaluate(with: value) {
             return "Password must be 8-64 characters with uppercase, lowercase, a digit, and a special character."
         }
-        
         
         return nil
     }
@@ -100,8 +95,8 @@ struct ValidatorHelper {
         if value.isEmpty {
             return "Email cannot be empty."
         }
-        let emailRegex = "^[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$"
-        let predicate = NSPredicate(format: "SELF MATCHES %@", emailRegex)
+        
+        let predicate = NSPredicate(format: "SELF MATCHES %@", RegexPattern.email.pattern)
         if !predicate.evaluate(with: value) {
             return "Invalid email format. Example: user@example.com"
         }
@@ -118,8 +113,8 @@ struct ValidatorHelper {
         if value.count > 50 {
             return "Name cannot exceed 50 characters."
         }
-        let nameRegex = "^[a-zA-Z ]+$"
-        let predicate = NSPredicate(format: "SELF MATCHES %@", nameRegex)
+        
+        let predicate = NSPredicate(format: "SELF MATCHES %@", RegexPattern.name.pattern)
         if !predicate.evaluate(with: value) {
             return "Name can only contain letters and spaces."
         }
@@ -136,8 +131,8 @@ struct ValidatorHelper {
         if value.count > 50 {
             return "Surname cannot exceed 50 characters."
         }
-        let surnameRegex = "^[a-zA-Z ]+$"
-        let predicate = NSPredicate(format: "SELF MATCHES %@", surnameRegex)
+        
+        let predicate = NSPredicate(format: "SELF MATCHES %@", RegexPattern.name.pattern)
         if !predicate.evaluate(with: value) {
             return "Surname can only contain letters and spaces."
         }
@@ -164,8 +159,8 @@ struct ValidatorHelper {
         if value.isEmpty {
             return "Phone number cannot be empty."
         }
-        let phoneRegex = "^\\+?[1-9]\\d{1,14}$" // E.164 format
-        let predicate = NSPredicate(format: "SELF MATCHES %@", phoneRegex)
+        
+        let predicate = NSPredicate(format: "SELF MATCHES %@", RegexPattern.phone.pattern)
         if !predicate.evaluate(with: value) {
             return "Invalid phone number format. Use international format (e.g., +123456789)."
         }
@@ -192,8 +187,8 @@ struct ValidatorHelper {
         if value.isEmpty {
             return "Value cannot be empty."
         }
-        let numericRegex = "^\\d+(\\.\\d+)?$"
-        let predicate = NSPredicate(format: "SELF MATCHES %@", numericRegex)
+        
+        let predicate = NSPredicate(format: "SELF MATCHES %@", RegexPattern.numeric.pattern)
         if !predicate.evaluate(with: value) {
             return "Value must be numeric. Example: 123 or 123.45"
         }
