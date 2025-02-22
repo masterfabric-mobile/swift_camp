@@ -1,6 +1,8 @@
 import SwiftUI
 import FirebaseAuth
 import FacebookLogin
+import AuthenticationServices
+import CryptoKit
 
 struct LoginView: View {
     @ObservedObject var presenter: LoginPresenter
@@ -10,6 +12,8 @@ struct LoginView: View {
     @State private var rememberMe: Bool = false
     @State private var errorMessage: String?
     @State private var isLoading: Bool = false
+    @State private var currentNonce: String?
+    @State private var isPasswordVisible: Bool = false
 
     var body: some View {
         NavigationView {
@@ -20,25 +24,56 @@ struct LoginView: View {
 
                 VStack(alignment: .leading, spacing: 10) {
                     Text("Email address or phone number")
-                    TextField("Your email", text: $email)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .keyboardType(.emailAddress)
-                        .autocapitalization(.none)
+                    HStack {
+                        TextField("Your email", text: $email)
+                            .keyboardType(.emailAddress)
+                            .autocapitalization(.none)
+                            .onAppear {
+                                email = ""
+                                password = ""
+                                loadRememberedEmail()
+                            }
+                            .onChange(of: email) { newEmail in
+                                checkRememberedPassword(for: newEmail)
+                            }
+                    }
+                    .padding(10)
+                    .background(RoundedRectangle(cornerRadius: 5).stroke(Color.gray.opacity(0.5), lineWidth: 1))
 
                     Text("Password")
-                    SecureField("Password", text: $password)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                    HStack {
+                        if isPasswordVisible {
+                            TextField("Password", text: $password)
+                        } else {
+                            SecureField("Password", text: $password)
+                        }
+                        
+                        Button(action: {
+                            isPasswordVisible.toggle()
+                        }) {
+                            Image(systemName: isPasswordVisible ? "eye.slash.fill" : "eye.fill")
+                                .foregroundColor(.gray)
+                        }
+                        .padding(.trailing, 8)
+                    }
+                    .padding(10)
+                    .background(RoundedRectangle(cornerRadius: 5).stroke(Color.gray.opacity(0.5), lineWidth: 1))
                 }
 
                 HStack {
-                    Toggle("Remember me", isOn: $rememberMe)
+                    Text("Remember me")
+                    Toggle("", isOn: $rememberMe)
+                        .labelsHidden()
                         .toggleStyle(SwitchToggleStyle(tint: .black))
+                    
                     Spacer()
+                    
                     NavigationLink(destination: ForgotPasswordView()) {
                         Text("Forgot password?")
                     }
                     .foregroundColor(.blue)
                 }
+
 
                 if let error = errorMessage {
                     Text(error)
@@ -63,7 +98,6 @@ struct LoginView: View {
                     .font(.footnote)
                     .foregroundColor(.gray)
 
-                // Google Login
                 Button(action: {
                     presenter.handleGoogleLogin()
                 }) {
@@ -80,7 +114,6 @@ struct LoginView: View {
                     .cornerRadius(8)
                 }
 
-                // GitHub Login
                 Button(action: {
                     presenter.handleGitHubLogin()
                 }) {
@@ -96,10 +129,8 @@ struct LoginView: View {
                     .background(Color.gray.opacity(0.1))
                     .cornerRadius(8)
                 }
-                
-                // Facebook Login
                 Button(action: {
-                    handleFacebookLogin()
+                    presenter.handleFacebookLogin()
                 }) {
                     HStack {
                         Image("facebookLogo")
@@ -114,9 +145,16 @@ struct LoginView: View {
                     .background(Color.gray.opacity(0.1))
                     .cornerRadius(8)
                 }
-
+                SignInWithAppleButton(
+                    .signIn,
+                    onRequest: configureAppleRequest,
+                    onCompletion: handleAppleSignIn
+                )
+                .signInWithAppleButtonStyle(.black)
+                .frame(maxWidth: .infinity)
+                .frame(height: 45)
+                .cornerRadius(8)
                 Spacer()
-
                 HStack {
                     Text("Don’t have an account?")
                     NavigationLink(destination: SignUpView()) {
@@ -129,57 +167,108 @@ struct LoginView: View {
             .padding()
         }
     }
-
     private func loginWithFirebase() {
         guard !email.isEmpty, !password.isEmpty else {
             errorMessage = "Please enter both email and password."
             return
         }
-
         isLoading = true
         errorMessage = nil
-
         Auth.auth().signIn(withEmail: email, password: password) { result, error in
             isLoading = false
-
             if let error = error {
                 self.errorMessage = error.localizedDescription
             } else {
-                print("User signed in: \(result?.user.uid ?? "No UID")")
+                if rememberMe {
+                    KeychainHelper.shared.save(self.email, forKey: "savedEmail")
+                    KeychainHelper.shared.save(self.password, forKey: "savedPassword")
+                } else {
+                    KeychainHelper.shared.delete(forKey: "savedEmail")
+                    KeychainHelper.shared.delete(forKey: "savedPassword")
+                }
                 presenter.handleSuccessfulLogin()
             }
         }
     }
+    private func randomNonceString(length: Int = 32) -> String {
+        let charset: [Character] = Array("0123456789ABCDEFGHIJKLMNOPQRSTUVXYZabcdefghijklmnopqrstuvwxyz-._")
+        var result = ""
+        var remainingLength = length
 
-    private func handleFacebookLogin() {
-        let loginManager = LoginManager()
-        loginManager.logIn(permissions: ["public_profile", "email"], from: nil) { result, error in
-            if let error = error {
-                self.errorMessage = "Facebook login failed: \(error.localizedDescription)"
-                return
+        while remainingLength > 0 {
+            let randoms: [UInt8] = (0..<16).map { _ in
+                var random: UInt8 = 0
+                let errorCode = SecRandomCopyBytes(kSecRandomDefault, 1, &random)
+                if errorCode != errSecSuccess {
+                    fatalError("Unable to generate nonce.")
+                }
+                return random
             }
 
-            guard let result = result, !result.isCancelled else {
-                self.errorMessage = "Facebook login was cancelled."
-                return
-            }
-
-            
-            guard let accessToken = AccessToken.current else {
-                self.errorMessage = "Failed to get access token."
-                return
-            }
-
-            
-            let credential = FacebookAuthProvider.credential(withAccessToken: accessToken.tokenString)
-            Auth.auth().signIn(with: credential) { authResult, error in
-                if let error = error {
-                    self.errorMessage = "Firebase login failed: \(error.localizedDescription)"
-                } else {
-                    print("Successfully logged in with Facebook: \(authResult?.user.uid ?? "No UID")")
-                    presenter.handleSuccessfulLogin()
+            randoms.forEach { random in
+                if remainingLength == 0 {
+                    return
+                }
+                if random < charset.count {
+                    result.append(charset[Int(random)])
+                    remainingLength -= 1
                 }
             }
         }
+        return result
     }
+    private func sha256(_ input: String) -> String {
+        let inputData = Data(input.utf8)
+        let hashedData = SHA256.hash(data: inputData)
+        return hashedData.map { String(format: "%02x", $0) }.joined()
+    }
+    private func configureAppleRequest(_ request: ASAuthorizationAppleIDRequest) {
+        let nonce = randomNonceString()
+        currentNonce = nonce
+        request.nonce = sha256(nonce)
+        request.requestedScopes = [.fullName, .email]
+    }
+    private func handleAppleSignIn(_ result: Result<ASAuthorization, Error>) {
+        switch result {
+        case .success(let authorization):
+            if let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential {
+                guard let identityToken = appleIDCredential.identityToken,
+                      let tokenString = String(data: identityToken, encoding: .utf8),
+                      let nonce = currentNonce else {
+                    self.errorMessage = "Invalid Apple Sign-In request."
+                    return
+                }
+                let credential = OAuthProvider.credential(
+                    withProviderID: "apple.com",
+                    idToken: tokenString,
+                    rawNonce: nonce
+                )
+                Auth.auth().signIn(with: credential) { authResult, error in
+                    if let error = error {
+                        self.errorMessage = "Apple Sign-In failed: \(error.localizedDescription)"
+                    } else {
+                        presenter.handleSuccessfulLogin()
+                    }
+                }
+            }
+        case .failure(let error):
+            self.errorMessage = "Apple Sign-In failed: \(error.localizedDescription)"
+        }
+    }
+    private func loadRememberedEmail() {
+        if let savedEmail = KeychainHelper.shared.retrieve(forKey: "savedEmail") {
+            if !email.isEmpty {
+                self.email = savedEmail
+            }
+        }
+    }
+    private func checkRememberedPassword(for newEmail: String) {
+        if let savedEmail = KeychainHelper.shared.retrieve(forKey: "savedEmail"),
+           let savedPassword = KeychainHelper.shared.retrieve(forKey: "savedPassword"),
+           newEmail == savedEmail {
+            self.password = savedPassword
+        } else {
+            self.password = ""
+        }
+    } 
 }

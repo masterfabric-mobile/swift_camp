@@ -5,32 +5,64 @@ struct SignUpView: View {
     @State private var email: String = ""
     @State private var password: String = ""
     @State private var confirmPassword: String = ""
-    @State private var errorMessage: String? = nil
+    @State private var isPasswordVisible: Bool = false
+    @State private var isConfirmPasswordVisible: Bool = false
+    @State private var errorMessage: String?
     @State private var isLoading: Bool = false
-
-    @Environment(\.presentationMode) var presentationMode
 
     var body: some View {
         VStack(spacing: 20) {
-            Text("Create an Account")
+            Text("Create Account")
                 .font(.largeTitle)
                 .fontWeight(.bold)
-                .padding(.top)
 
             VStack(alignment: .leading, spacing: 10) {
-                Text("Email")
-                TextField("Enter your email", text: $email)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .keyboardType(.emailAddress)
-                    .autocapitalization(.none)
+                Text("Email Address")
+                HStack {
+                    TextField("Enter your email", text: $email)
+                        .keyboardType(.emailAddress)
+                        .autocapitalization(.none)
+                }
+                .padding(10)
+                .background(RoundedRectangle(cornerRadius: 5).stroke(Color.gray.opacity(0.5), lineWidth: 1))
 
                 Text("Password")
-                SecureField("Enter your password", text: $password)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                HStack {
+                    if isPasswordVisible {
+                        TextField("Enter your password", text: $password)
+                    } else {
+                        SecureField("Enter your password", text: $password)
+                    }
+                    
+                    Button(action: {
+                        isPasswordVisible.toggle()
+                    }) {
+                        Image(systemName: isPasswordVisible ? "eye.slash.fill" : "eye.fill")
+                            .foregroundColor(.gray)
+                    }
+                    .padding(.trailing, 8)
+                }
+                .padding(10)
+                .background(RoundedRectangle(cornerRadius: 5).stroke(Color.gray.opacity(0.5), lineWidth: 1))
 
                 Text("Confirm Password")
-                SecureField("Confirm your password", text: $confirmPassword)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                HStack {
+                    if isConfirmPasswordVisible {
+                        TextField("Confirm your password", text: $confirmPassword)
+                    } else {
+                        SecureField("Confirm your password", text: $confirmPassword)
+                    }
+                    
+                    Button(action: {
+                        isConfirmPasswordVisible.toggle()
+                    }) {
+                        Image(systemName: isConfirmPasswordVisible ? "eye.slash.fill" : "eye.fill")
+                            .foregroundColor(.gray)
+                    }
+                    .padding(.trailing, 8)
+                }
+                .padding(10)
+                .background(RoundedRectangle(cornerRadius: 5).stroke(Color.gray.opacity(0.5), lineWidth: 1))
             }
 
             if let error = errorMessage {
@@ -39,29 +71,27 @@ struct SignUpView: View {
                     .font(.footnote)
             }
 
-            Button(action: registerUser) {
+            Button(action: signUpWithFirebase) {
                 if isLoading {
                     ProgressView()
                 } else {
                     Text("Sign Up")
                         .frame(maxWidth: .infinity)
                         .padding()
-                        .background(Color.blue)
+                        .background(Color.black)
                         .foregroundColor(.white)
                         .cornerRadius(8)
                 }
             }
-            .padding(.top, 10)
 
             Spacer()
         }
         .padding()
     }
 
-    
-    private func registerUser() {
+    private func signUpWithFirebase() {
         guard !email.isEmpty, !password.isEmpty, !confirmPassword.isEmpty else {
-            errorMessage = "Please fill out all fields."
+            errorMessage = "All fields are required."
             return
         }
 
@@ -73,17 +103,13 @@ struct SignUpView: View {
         isLoading = true
         errorMessage = nil
 
-        
         Auth.auth().createUser(withEmail: email, password: password) { result, error in
             isLoading = false
-
             if let error = error {
                 self.errorMessage = error.localizedDescription
             } else {
-                print("User registered successfully: \(result?.user.uid ?? "No UID")")
-                presentationMode.wrappedValue.dismiss()
+                print("User signed up successfully!")
             }
         }
     }
 }
-

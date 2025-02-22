@@ -38,7 +38,7 @@ struct ValidatorHelper {
         case .email:
             errorMessages += validateTextField(value: trimmedValue, type: .email)
         case .search:
-            errorMessages += validateTextField(value: trimmedValue, type: .search)
+            errorMessages += validateTextField(value: value, type: .search)
         case .phoneNumber:
             errorMessages += validateTextField(value: trimmedValue, type: .phoneNumber)
         case .url:
@@ -136,10 +136,6 @@ struct ValidatorHelper {
     }
     
     private func validateSearch(_ value: String) -> String? {
-
-        if value.contains(where: { !$0.isLetter && !$0.isNumber && !$0.isWhitespace }) {
-            return "Search input can only contain letters, numbers, and spaces."
-        }
         return nil
     }
     

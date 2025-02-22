@@ -62,5 +62,3 @@ fastlane/screenshots/**/*.png
 fastlane/test_output
 SwiftUI/SwiftUI-Components-App/.DS_Store
 .DS_Store
-SwiftUI/Swift-Camp-Devs/SwiftCampDevs/Config.xcconfig
-.xcconfig

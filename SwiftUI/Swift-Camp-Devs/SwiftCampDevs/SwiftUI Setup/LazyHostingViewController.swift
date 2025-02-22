@@ -15,23 +15,25 @@ import RxCocoa
 /// Each `LazyHostingViewController` will be generic over the root view that is
 /// contained inside it.
 class LazyHostingViewController<RootView: View>: UIViewController {
-
+    
     var rootView: RootView!
     private let isNavigationBarHidden: Bool
-
+    private var themeHelper = ThemeHelper.shared
+    
     init(isNavigationBarHidden: Bool = true) {
         self.isNavigationBarHidden = isNavigationBarHidden
         super.init(nibName: nil, bundle: nil)
     }
-
+    
     @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        configureTheme()
+        
         // Create the hosting controller that will hold the SwiftUI view
         // and add it as a child view controller to self in order to properly
         // propagate all VC lifecycle events.
@@ -41,35 +43,53 @@ class LazyHostingViewController<RootView: View>: UIViewController {
         let hostingController = UIHostingController(rootView: rootView)
         view.addSubview(hostingController.view)
         addChild(hostingController)
-
+        
         hostingController.view.translatesAutoresizingMaskIntoConstraints = false
-
+        
         NSLayoutConstraint.activate([
             hostingController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             hostingController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             hostingController.view.topAnchor.constraint(equalTo: view.topAnchor),
             hostingController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
-
+        
         hostingController.didMove(toParent: self)
     }
-
+    
     override func viewIsAppearing(_ animated: Bool) {
         super.viewIsAppearing(animated)
         navigationController?.setNavigationBarHidden(isNavigationBarHidden, animated: animated)
     }
+    
+}
 
+extension LazyHostingViewController {
+    func configureTheme() {
+        switch ThemeHelper.shared.themeType {
+        case .dark:
+            self.overrideUserInterfaceStyle = .dark
+        case .light:
+            self.overrideUserInterfaceStyle = .light
+        case .custom:
+            if ThemeHelper.shared.customTheme != nil {
+                self.overrideUserInterfaceStyle = .unspecified
+            } else {
+                self.overrideUserInterfaceStyle = .light
+                LoggerHelper.shared.info("Custom theme not found, defaulting to light theme")
+            }
+        }
+    }
 }
 
 extension LazyHostingViewController: HostingNavigationConfigurable {
-
+    
     var shouldHideNavigationBar: Bool { isNavigationBarHidden }
-
+    
 }
 
 
 protocol HostingNavigationConfigurable: AnyObject {
-
+    
     var shouldHideNavigationBar: Bool { get }
-
+    
 }

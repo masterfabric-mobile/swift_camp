@@ -5,6 +5,12 @@
       "comment" : "Bundle display name",
       "extractionState" : "extracted_with_value",
       "localizations" : {
+        "ar-AE" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OneSignalNotificationServiceExtension"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "new",
@@ -15,6 +21,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Extensión del Servicio de Notificaciones de OneSignal"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OneSignalNotificationServiceExtension"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OneSignalNotificationServiceExtension"
           }
         },
         "ur-IN" : {
@@ -41,6 +59,12 @@
       "comment" : "Bundle name",
       "extractionState" : "extracted_with_value",
       "localizations" : {
+        "ar-AE" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OneSignalNotificationServiceExtension"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "new",
@@ -51,6 +75,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Extensión del Servicio de Notificaciones de OneSignal"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OneSignalNotificationServiceExtension"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OneSignalNotificationServiceExtension"
           }
         },
         "ur-IN" : {

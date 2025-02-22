@@ -257,6 +257,7 @@
       }
     },
     "Apple" : {
+      "extractionState" : "manual",
       "localizations" : {
         "ar-AE" : {
           "stringUnit" : {
@@ -819,6 +820,9 @@
         }
       }
     },
+    "Confirm your password" : {
+
+    },
     "Contact Us" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1007,6 +1011,12 @@
         }
       }
     },
+    "Continue with Facebook" : {
+
+    },
+    "Continue with GitHub" : {
+
+    },
     "Continue with Google" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1194,6 +1204,9 @@
           }
         }
       }
+    },
+    "Create an Account" : {
+
     },
     "Don’t have an account?" : {
       "localizations" : {
@@ -1851,6 +1864,9 @@
         }
       }
     },
+    "Enter your email" : {
+
+    },
     "Enter your email address" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1897,6 +1913,12 @@
           }
         }
       }
+    },
+    "Enter your email address to receive a password reset link." : {
+
+    },
+    "Enter your password" : {
+
     },
     "Error 404: Motivation Not Found? \nCL is here to help" : {
       "extractionState" : "manual",
@@ -2180,6 +2202,9 @@
         }
       }
     },
+    "Forgot Password" : {
+
+    },
     "Forgot password?" : {
       "localizations" : {
         "ar-AE" : {
@@ -2368,6 +2393,7 @@
       }
     },
     "GitHub" : {
+      "extractionState" : "manual",
       "localizations" : {
         "ar-AE" : {
           "stringUnit" : {
@@ -2413,7 +2439,18 @@
         }
       }
     },
+    "Go to Login" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Iniciar sesión"
+          }
+        }
+      }
+    },
     "Google" : {
+      "extractionState" : "manual",
       "localizations" : {
         "ar-AE" : {
           "stringUnit" : {
@@ -3442,6 +3479,9 @@
         }
       }
     },
+    "Password reset link sent! Check your email." : {
+
+    },
     "Please confirm your country code and enter your phone number." : {
       "extractionState" : "manual",
       "localizations" : {
@@ -4334,6 +4374,9 @@
         }
       }
     },
+    "Send Reset Link" : {
+
+    },
     "Share" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -4426,6 +4469,9 @@
           }
         }
       }
+    },
+    "Sign Up" : {
+
     },
     "Skip" : {
       "extractionState" : "manual",
