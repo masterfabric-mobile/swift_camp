@@ -83,7 +83,6 @@ final class SnackbarHelper: SnackbarHelperProtocol {
             titleLabel.topAnchor.constraint(equalTo: snackbarView.topAnchor, constant: 8)
         ]
 
-        // Eğer description nil değilse, descriptionLabel'ı ekleyelim
         if let description = description, !description.isEmpty {
             let descriptionLabel = UILabel()
             descriptionLabel.text = description
