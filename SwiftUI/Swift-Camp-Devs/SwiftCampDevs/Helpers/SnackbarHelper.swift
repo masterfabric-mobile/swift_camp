@@ -51,55 +51,68 @@ final class SnackbarHelper: SnackbarHelperProtocol {
         snackbarView.layer.cornerRadius = 12
         snackbarView.clipsToBounds = true
         snackbarView.translatesAutoresizingMaskIntoConstraints = false
-        
+
         // Icon
         let iconImageView = UIImageView(image: icon)
         iconImageView.tintColor = textColor
         iconImageView.contentMode = .scaleAspectFit
         iconImageView.translatesAutoresizingMaskIntoConstraints = false
-        
+
         // Title Label
         let titleLabel = UILabel()
         titleLabel.text = title
         titleLabel.font = UIFont.boldSystemFont(ofSize: 16)
         titleLabel.textColor = textColor
+        titleLabel.numberOfLines = 0
+        titleLabel.lineBreakMode = .byWordWrapping
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        titleLabel.setContentHuggingPriority(.defaultHigh, for: .vertical)
+        titleLabel.setContentCompressionResistancePriority(.defaultLow, for: .vertical)
         
-        // Description Label
-        let descriptionLabel = UILabel()
-        descriptionLabel.text = description
-        descriptionLabel.font = UIFont.systemFont(ofSize: 14)
-        descriptionLabel.textColor = textColor
-        descriptionLabel.numberOfLines = 0
-        descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
-        
-        // Add Subviews
         snackbarView.addSubview(iconImageView)
         snackbarView.addSubview(titleLabel)
-        snackbarView.addSubview(descriptionLabel)
-        
-        // Add Constraints
-        NSLayoutConstraint.activate([
+
+        var constraints: [NSLayoutConstraint] = [
             iconImageView.leadingAnchor.constraint(equalTo: snackbarView.leadingAnchor, constant: 8),
             iconImageView.centerYAnchor.constraint(equalTo: snackbarView.centerYAnchor),
             iconImageView.widthAnchor.constraint(equalToConstant: 24),
             iconImageView.heightAnchor.constraint(equalToConstant: 24),
-            
+
             titleLabel.leadingAnchor.constraint(equalTo: iconImageView.trailingAnchor, constant: 8),
             titleLabel.trailingAnchor.constraint(equalTo: snackbarView.trailingAnchor, constant: -8),
-            titleLabel.topAnchor.constraint(equalTo: snackbarView.topAnchor, constant: 8),
-            
-            descriptionLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
-            descriptionLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
-            descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 4),
-            descriptionLabel.bottomAnchor.constraint(equalTo: snackbarView.bottomAnchor, constant: -8)
-        ])
+            titleLabel.topAnchor.constraint(equalTo: snackbarView.topAnchor, constant: 8)
+        ]
+
+        // Eğer description nil değilse, descriptionLabel'ı ekleyelim
+        if let description = description, !description.isEmpty {
+            let descriptionLabel = UILabel()
+            descriptionLabel.text = description
+            descriptionLabel.font = UIFont.systemFont(ofSize: 14)
+            descriptionLabel.textColor = textColor
+            descriptionLabel.numberOfLines = 0
+            descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
+
+            snackbarView.addSubview(descriptionLabel)
+
+            constraints.append(contentsOf: [
+                descriptionLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
+                descriptionLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
+                descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 4),
+                descriptionLabel.bottomAnchor.constraint(equalTo: snackbarView.bottomAnchor, constant: -8)
+            ])
+        } else {
+            constraints.append(titleLabel.bottomAnchor.constraint(equalTo: snackbarView.bottomAnchor, constant: -8))
+        }
+
+        NSLayoutConstraint.activate(constraints)
         
         return snackbarView
     }
     
     // MARK: - Private Method to Show Snackbar View
+    
     private func showSnackbarView(_ snackbarView: UIView, in viewController: UIViewController, duration: TimeInterval) {
+        snackbarView.tag = 999
         viewController.view.addSubview(snackbarView)
         
         NSLayoutConstraint.activate([
@@ -108,18 +121,20 @@ final class SnackbarHelper: SnackbarHelperProtocol {
             snackbarView.bottomAnchor.constraint(equalTo: viewController.view.safeAreaLayoutGuide.bottomAnchor, constant: -16)
         ])
         
+        viewController.view.layoutIfNeeded()
+        
         snackbarView.alpha = 0
         UIView.animate(withDuration: 0.3, animations: {
             snackbarView.alpha = 1
-        }) { _ in
+        }, completion: { _ in
             DispatchQueue.main.asyncAfter(deadline: .now() + duration) {
                 UIView.animate(withDuration: 0.3, animations: {
                     snackbarView.alpha = 0
-                }) { _ in
+                }, completion: { _ in
                     snackbarView.removeFromSuperview()
-                }
+                })
             }
-        }
+        })
     }
     
     // MARK: - SnackbarType Enum
