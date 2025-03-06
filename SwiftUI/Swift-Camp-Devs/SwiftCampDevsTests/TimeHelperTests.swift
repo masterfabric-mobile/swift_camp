@@ -80,12 +80,25 @@ final class TimeHelperTests: XCTestCase {
     func testGetCurrentDateTimeWithTimeZone() {
         let timeZone = TimeZone(identifier: "UTC")!
         let formattedDateTime = timeHelper.getCurrentDateTime(format: "yyyy-MM-dd HH:mm:ss", timeZone: timeZone)
-        XCTAssertTrue(formattedDateTime.contains("2025-02-27"))
+
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = timeZone
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let expectedDateTime = dateFormatter.string(from: Date())
+
+        XCTAssertEqual(formattedDateTime, expectedDateTime)
     }
+
     func testGetCurrentDateWithTimeZone() {
         let timeZone = TimeZone(identifier: "UTC")!
         let formattedDate = timeHelper.getCurrentDate(format: "yyyy-MM-dd", timeZone: timeZone)
-        XCTAssertTrue(formattedDate.contains("2025-02-27"))
+
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = timeZone
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let expectedDate = dateFormatter.string(from: Date())
+
+        XCTAssertEqual(formattedDate, expectedDate)
     }
     func testGetCurrentDateTime_UTC() {
         let timeZone = TimeZone(identifier: "UTC")!
