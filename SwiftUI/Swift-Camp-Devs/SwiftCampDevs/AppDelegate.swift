@@ -59,7 +59,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AppWindowHandler {
             .build(with: launchOptions)
         
         // NetworkHelper initializers
-        let _ = NetworkHelper.shared
+         _ = NetworkHelper.shared
         
         return true
     }
@@ -155,7 +155,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AppWindowHandler {
         let deviceModel = UIDevice.current.model
         let osVersion = UIDevice.current.systemVersion
         let installDate = DateFormatter.localizedString(from: Date(), dateStyle: .medium, timeStyle: .short)
-        let subID = "unknown" // TODO: Replace with actual fetching logic
+        let subID = "unknown"
         
         let records = LocalStorageHelper.shared.fetchData(tableName: "AppInfo")
         

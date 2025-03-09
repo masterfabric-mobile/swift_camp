@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3CB768CF2D5BEA3900CDBCDE /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 3CB768CE2D5BEA3200CDBCDE /* .swiftlint.yml */; };
 		3CCB621F2D4E2777006EBB09 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 3CCB621E2D4E2777006EBB09 /* SQLite */; };
 		41A22C112D42C8DC00A5F84D /* EnvironmentConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 41A22C102D42C8CE00A5F84D /* EnvironmentConfig.plist */; };
 		41C902F22D56893C0064480F /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 41C902F12D56893C0064480F /* Localizable.xcstrings */; };
@@ -86,6 +87,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3CB768CE2D5BEA3200CDBCDE /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		41A22C102D42C8CE00A5F84D /* EnvironmentConfig.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = EnvironmentConfig.plist; sourceTree = "<group>"; };
 		41C902F12D56893C0064480F /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		41C905DE2D58BF5F0064480F /* CustomTheme.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CustomTheme.json; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 		7F313A05292BC7E90048C74C /* SwiftCampDevs */ = {
 			isa = PBXGroup;
 			children = (
+				3CB768CE2D5BEA3200CDBCDE /* .swiftlint.yml */,
 				41C905DE2D58BF5F0064480F /* CustomTheme.json */,
 				89525E8E2D453D5D008BF4B6 /* Podfile */,
 				89C9FEC92D44E8F100CDF043 /* SwiftCampDevs.entitlements */,
@@ -337,6 +340,7 @@
 				7F313A01292BC7E90048C74C /* Resources */,
 				89C9FEDA2D44E9A100CDF043 /* Embed Foundation Extensions */,
 				017D4CC62D5544300040A8CD /* ShellScript */,
+				3CC851742D6CEC9C00955EAD /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -445,6 +449,7 @@
 				556B28512D5039F900D20F1B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				89EBF4EC2D52505500D6FB92 /* XCRemoteSwiftPackageReference "mixpanel-swift" */,
 				D4F81E962D550C5D004EB676 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
+				3CB768CA2D5BE9AC00CDBCDE /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */,
 			);
 			productRefGroup = 7F313A04292BC7E90048C74C /* Products */;
 			projectDirPath = "";
@@ -469,6 +474,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CB768CF2D5BEA3900CDBCDE /* .swiftlint.yml in Resources */,
 				41A22C112D42C8DC00A5F84D /* EnvironmentConfig.plist in Resources */,
 				7F313A13292BC7EA0048C74C /* LaunchScreen.storyboard in Resources */,
 				556B28B22D50429C00D20F1B /* GoogleService-Info.plist in Resources */,
@@ -509,7 +515,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n$(SRCROOT)/\"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n$(SRCROOT)/\"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\n\n";
+		};
+		3CC851742D6CEC9C00955EAD /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n$(SRCROOT)/swiftlint_output.txt\nSWIFT_PACKAGE_DIR=\"${BUILD_DIR%Build/*}SourcePackages/artifacts\"\nSWIFTLINT_CMD=$(ls \"$SWIFT_PACKAGE_DIR\"/swiftlintplugins/SwiftLintBinary/SwiftLintBinary.artifactbundle/swiftlint-*-macos/bin/swiftlint | head -n 1)\n\nif test -f \"$SWIFTLINT_CMD\" 2>&1\nthen\n    \"$SWIFTLINT_CMD\"\nelse\n    echo \"warning: `swiftlint` command not found - See https://github.com/realm/SwiftLint#installation for installation instructions.\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -914,6 +938,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		3CB768CA2D5BE9AC00CDBCDE /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SimplyDanny/SwiftLintPlugins";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.58.2;
+			};
+		};
 		3CCB621D2D4E2777006EBB09 /* XCRemoteSwiftPackageReference "SQLite" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/stephencelis/SQLite.swift";

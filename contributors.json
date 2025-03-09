@@ -19,7 +19,7 @@
     "type": "User",
     "user_view_type": "public",
     "site_admin": false,
-    "contributions": 205
+    "contributions": 209
   },
   {
     "login": "melihalkbk",
@@ -41,7 +41,7 @@
     "type": "User",
     "user_view_type": "public",
     "site_admin": false,
-    "contributions": 59
+    "contributions": 64
   },
   {
     "login": "turhanGoksu",
@@ -220,6 +220,28 @@
     "contributions": 24
   },
   {
+    "login": "ayberkgorgun",
+    "id": 55927375,
+    "node_id": "MDQ6VXNlcjU1OTI3Mzc1",
+    "avatar_url": "https://avatars.githubusercontent.com/u/55927375?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/ayberkgorgun",
+    "html_url": "https://github.com/ayberkgorgun",
+    "followers_url": "https://api.github.com/users/ayberkgorgun/followers",
+    "following_url": "https://api.github.com/users/ayberkgorgun/following{/other_user}",
+    "gists_url": "https://api.github.com/users/ayberkgorgun/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/ayberkgorgun/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/ayberkgorgun/subscriptions",
+    "organizations_url": "https://api.github.com/users/ayberkgorgun/orgs",
+    "repos_url": "https://api.github.com/users/ayberkgorgun/repos",
+    "events_url": "https://api.github.com/users/ayberkgorgun/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/ayberkgorgun/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false,
+    "contributions": 13
+  },
+  {
     "login": "AylinManav",
     "id": 116441339,
     "node_id": "U_kgDOBvDA-w",
@@ -240,28 +262,6 @@
     "user_view_type": "public",
     "site_admin": false,
     "contributions": 10
-  },
-  {
-    "login": "ayberkgorgun",
-    "id": 55927375,
-    "node_id": "MDQ6VXNlcjU1OTI3Mzc1",
-    "avatar_url": "https://avatars.githubusercontent.com/u/55927375?v=4",
-    "gravatar_id": "",
-    "url": "https://api.github.com/users/ayberkgorgun",
-    "html_url": "https://github.com/ayberkgorgun",
-    "followers_url": "https://api.github.com/users/ayberkgorgun/followers",
-    "following_url": "https://api.github.com/users/ayberkgorgun/following{/other_user}",
-    "gists_url": "https://api.github.com/users/ayberkgorgun/gists{/gist_id}",
-    "starred_url": "https://api.github.com/users/ayberkgorgun/starred{/owner}{/repo}",
-    "subscriptions_url": "https://api.github.com/users/ayberkgorgun/subscriptions",
-    "organizations_url": "https://api.github.com/users/ayberkgorgun/orgs",
-    "repos_url": "https://api.github.com/users/ayberkgorgun/repos",
-    "events_url": "https://api.github.com/users/ayberkgorgun/events{/privacy}",
-    "received_events_url": "https://api.github.com/users/ayberkgorgun/received_events",
-    "type": "User",
-    "user_view_type": "public",
-    "site_admin": false,
-    "contributions": 9
   },
   {
     "login": "OnurArslan0",

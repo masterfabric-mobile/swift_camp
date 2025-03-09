@@ -54,7 +54,7 @@ enum ButtonSize {
             trailing: UISizerHelper.Dimensions.normal
         )
         case .medium: return EdgeInsets(
-            top:UISizerHelper.Dimensions.normal,
+            top: UISizerHelper.Dimensions.normal,
             leading: UISizerHelper.Dimensions.medium,
             bottom: UISizerHelper.Dimensions.normal,
             trailing: UISizerHelper.Dimensions.medium

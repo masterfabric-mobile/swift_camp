@@ -1,0 +1,81 @@
+cache_path: ""
+
+excluded:
+  - Pods
+  - DerivedData
+  - .build
+  - "**/*.pb.swift"
+  - "**/*.generated.swift"
+  - "**/Generated"
+  - "**/GoogleService-Info.plist"
+  - "**/Info.plist"
+  - "**/EnvironmentConfig.plist"
+  - "**/Firebase/**"
+  - "**/Carthage"
+  - "**/gRPC/**"
+  - "**/Mixpanel/**"
+  - "**/GoogleAppMeasurement/**"
+  - "**/GoogleDataTransport/**"
+  - "**/OneSignalXCFramework/**"
+  - "**/OneSignalNotificationServiceExtension/**"
+  - "**/Protobuf/**"
+  - "**/SwiftGen/**"
+
+included:
+  - SwiftCampDevs/Views
+  - SwiftCampDevs/Utils
+  - SwiftCampDevs/Helpers
+  - SwiftCampDevs/Components
+  - SwiftCampDevs/Initializers
+  - SwiftCampDevs/Modules
+  - SwiftCampDevs/VIPER
+
+opt_in_rules:
+  - control_statement
+  - trailing_newline
+
+disabled_rules:
+  - identifier_name
+  - nesting
+  - function_parameter_count
+
+force_cast: warning
+force_try:
+  severity: warning
+
+type_body_length:
+  - 300 # warning
+  - 400 # error
+
+line_length:
+  warning: 200
+  error: 300
+
+trailing_whitespace:
+  ignores_empty_lines: true
+
+file_length:
+  warning: 500
+  error: 800
+
+large_tuple:
+  - 3
+  - 4
+
+vertical_whitespace:
+  max_empty_lines: 3
+
+empty_enum_arguments:
+  severity: warning
+
+todo:
+  severity: warning
+
+type_name:
+  min_length: 4
+  max_length:
+    warning: 30
+    error: 35
+  excluded: iPhone
+
+reporter: "xcode"

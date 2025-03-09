@@ -60,7 +60,7 @@ final class BatteryHelper: ObservableObject {
     // MARK: - Private Simulation Methods
 
     /// Starts battery simulation for the simulator
-    private func startSimulationIfNeeded() {
+    internal func startSimulationIfNeeded() {
         guard isSimulating else { return }
         LoggerHelper.shared.info("🔧 Starting battery simulation.")
         timer = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true) { [weak self] _ in
@@ -109,7 +109,7 @@ final class BatteryHelper: ObservableObject {
     // MARK: - Battery State Color Methods
 
     /// Gets the color for the current battery state
-    private func getBatteryStateColor() -> Color {
+    internal func getBatteryStateColor() -> Color {
         if batteryLevel < 10 {
             return .red // Change color to red when battery level is less than 10
         } else if batteryLevel <= 20 {

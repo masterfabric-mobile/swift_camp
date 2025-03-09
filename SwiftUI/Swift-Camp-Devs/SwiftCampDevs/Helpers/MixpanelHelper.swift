@@ -124,5 +124,3 @@ class MixpanelLogManager {
         print("Mixpanel Logging: \(loggable.logType)")
     }
 }
-
-

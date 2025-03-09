@@ -1205,7 +1205,7 @@
         }
       }
     },
-    "Create an Account" : {
+    "Create Account" : {
 
     },
     "Don’t have an account?" : {
@@ -1582,6 +1582,9 @@
           }
         }
       }
+    },
+    "Email Address" : {
+
     },
     "Email address or phone number" : {
       "localizations" : {
@@ -2013,6 +2016,9 @@
           }
         }
       }
+    },
+    "Error: %@" : {
+
     },
     "Experience" : {
       "extractionState" : "manual",
@@ -2917,6 +2923,9 @@
           }
         }
       }
+    },
+    "Loading countries..." : {
+
     },
     "Log in" : {
       "localizations" : {
@@ -4186,6 +4195,9 @@
         }
       }
     },
+    "Search Country" : {
+
+    },
     "Security" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -4232,6 +4244,9 @@
           }
         }
       }
+    },
+    "Select Country" : {
+
     },
     "Send code" : {
       "extractionState" : "manual",

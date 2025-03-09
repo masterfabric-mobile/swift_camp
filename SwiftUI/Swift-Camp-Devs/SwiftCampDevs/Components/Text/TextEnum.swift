@@ -256,4 +256,3 @@ enum RegexPattern: String {
         return NSPredicate(format: "SELF MATCHES %@", self.rawValue).evaluate(with: value)
     }
 }
-

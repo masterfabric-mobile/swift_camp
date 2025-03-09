@@ -181,4 +181,3 @@ class LogManager {
         LoggerHelper.shared.verbose("Logging: \(loggable.logType)")
     }
 }
-

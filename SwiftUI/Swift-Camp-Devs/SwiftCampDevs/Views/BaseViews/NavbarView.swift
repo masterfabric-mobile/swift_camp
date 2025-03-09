@@ -90,4 +90,3 @@ struct NavbarView_Previews: PreviewProvider {
         NavbarView()
     }
 }
-

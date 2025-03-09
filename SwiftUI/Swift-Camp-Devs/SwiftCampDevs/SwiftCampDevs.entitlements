@@ -2,17 +2,21 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    
+    <!-- 🔔 Push Notifications Capability -->
     <key>aps-environment</key>
     <string>development</string>
 
-   
+    <!-- 🔑 Sign in with Apple Capability -->
     <key>com.apple.developer.applesignin</key>
     <array>
         <string>Default</string>
     </array>
 
-    
+    <!-- 🎙️ Siri Capability -->
+    <key>com.apple.developer.siri</key>
+    <true/>
+
+    <!-- 🏠 App Groups (For sharing data between app and extensions) -->
     <key>com.apple.security.application-groups</key>
     <array>
         <string>group.com.masterfabric.campdev</string>

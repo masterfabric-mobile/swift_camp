@@ -130,4 +130,3 @@ enum FacebookEventType: String {
     case customAppEvent = "CUSTOM_APP_EVENTS"
     case deferredAppLink = "DEFERRED_APP_LINK"
 }
-

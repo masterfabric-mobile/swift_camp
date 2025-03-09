@@ -14,4 +14,3 @@ public enum SearchType {
     case endsWith
     
 }
-

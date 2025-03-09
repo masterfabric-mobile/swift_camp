@@ -12,7 +12,7 @@ struct SCBottomSheet: View {
                 VStack {
                     contentBody
                         .padding()
-                        .frame(width:UIScreen.main.bounds.width,
+                        .frame(width: UIScreen.main.bounds.width,
                                height: UIScreen.main.bounds.height * content.heightPercentage)
                         .background(Color.white)
                         .cornerRadius(UISizerHelper.Radius.normal, corners: [.topLeft, .topRight])

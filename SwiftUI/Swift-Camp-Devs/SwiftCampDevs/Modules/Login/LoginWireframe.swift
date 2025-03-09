@@ -22,7 +22,8 @@ extension LoginWireframe: LoginWireframeInterface {
     }
 
     func navigateToHome() {
-        let homeWireframe = HomeWireframe()  
+        
+        let homeWireframe = HomeWireframe()
         navigationController?.pushWireframe(homeWireframe)
     }
 }

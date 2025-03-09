@@ -2,66 +2,110 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>CFBundleURLTypes</key>
-	<array>
-		<dict>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>com.googleusercontent.apps.145185051885-bhrm2jencqlhc0r0et7jn72drvkddpsg</string>
-			</array>
-		</dict>
-		<dict>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>github</string>
-			</array>
-		</dict>
-		<dict>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>fb1172766844364372</string>
-			</array>
-		</dict>
-	</array>
-	<key>FacebookAppID</key>
-	<string>1172766844364372</string>
-	<key>FacebookClientToken</key>
-	<string>$(FACEBOOK_CLIENT_TOKEN)</string>
-	<key>FacebookDisplayName</key>
-	<string>Camp Devs</string>
-	<key>LSApplicationQueriesSchemes</key>
-	<array>
-		<string>google</string>
-		<string>com.googleusercontent.apps</string>
-		<string>github</string>
-		<string>fbapi</string>
-		<string>fb-messenger-share-api</string>
-	</array>
-	<key>NSAppTransportSecurity</key>
-	<dict>
-		<key>NSAllowsArbitraryLoads</key>
-		<true/>
-		<key>NSExceptionDomains</key>
-		<dict>
-			<key>firebaseapp.com</key>
-			<dict>
-				<key>NSExceptionAllowsInsecureHTTPLoads</key>
-				<true/>
-				<key>NSIncludesSubdomains</key>
-				<true/>
-			</dict>
-			<key>github.com</key>
-			<dict>
-				<key>NSExceptionAllowsInsecureHTTPLoads</key>
-				<true/>
-				<key>NSIncludesSubdomains</key>
-				<true/>
-			</dict>
-		</dict>
-	</dict>
-	<key>UIBackgroundModes</key>
-	<array>
-		<string>remote-notification</string>
-	</array>
+    <!-- ✅ URL Schemes (Google, GitHub, Facebook) -->
+    <key>CFBundleURLTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>com.googleusercontent.apps.145185051885-bhrm2jencqlhc0r0et7jn72drvkddpsg</string>
+                <string>github</string>
+                <string>fb1172766844364372</string>
+            </array>
+        </dict>
+    </array>
+
+    <!-- ✅ Facebook Configuration -->
+    <key>FacebookAppID</key>
+    <string>1172766844364372</string>
+    <key>FacebookClientToken</key>
+    <string>$(FACEBOOK_CLIENT_TOKEN)</string>
+    <key>FacebookDisplayName</key>
+    <string>Camp Devs</string>
+
+    <!-- ✅ LSApplicationQueriesSchemes (For Interacting with Other Apps) -->
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+        <string>google</string>
+        <string>com.googleusercontent.apps</string>
+        <string>github</string>
+        <string>fbapi</string>
+        <string>fb-messenger-share-api</string>
+    </array>
+
+    <!-- ✅ App Transport Security (Network Security Settings) -->
+    <key>NSAppTransportSecurity</key>
+    <dict>
+        <key>NSAllowsArbitraryLoads</key>
+        <true/>
+        <key>NSExceptionDomains</key>
+        <dict>
+            <key>firebaseapp.com</key>
+            <dict>
+                <key>NSExceptionAllowsInsecureHTTPLoads</key>
+                <true/>
+                <key>NSIncludesSubdomains</key>
+                <true/>
+            </dict>
+            <key>github.com</key>
+            <dict>
+                <key>NSExceptionAllowsInsecureHTTPLoads</key>
+                <true/>
+                <key>NSIncludesSubdomains</key>
+                <true/>
+            </dict>
+        </dict>
+    </dict>
+
+    <!-- ✅ Background Modes for Push Notifications -->
+    <key>UIBackgroundModes</key>
+    <array>
+        <string>remote-notification</string>
+    </array>
+
+    <!-- ✅ Required Capabilities -->
+    <key>UIRequiredDeviceCapabilities</key>
+    <array>
+        <string>arm64</string> <!-- Ensures app runs only on 64-bit devices -->
+    </array>
+
+    <!-- 🔹📍 PRIVACY PERMISSIONS (Required for PermissionHelper) -->
+    
+    <!-- 📍 Location Permission -->
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>This app needs access to your location for location-based services.</string>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>This app needs background location access for continuous location tracking.</string>
+
+    <!-- 🎤 Microphone Permission -->
+    <key>NSMicrophoneUsageDescription</key>
+    <string>We need microphone access for voice recording and audio input.</string>
+
+    <!-- 📷 Camera Permission -->
+    <key>NSCameraUsageDescription</key>
+    <string>This app needs camera access to take photos and record videos.</string>
+
+    <!-- 🖼️ Photo Library Permission -->
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>This app needs access to your photo library to save and share images.</string>
+    <key>NSPhotoLibraryAddUsageDescription</key>
+    <string>This app requests permission to add new photos to your library.</string>
+
+    <!-- 📇 Contacts Permission -->
+    <key>NSContactsUsageDescription</key>
+    <string>We need access to your contacts to enhance your user experience.</string>
+
+    <!-- 🗣️ Siri Permission -->
+    <key>NSSiriUsageDescription</key>
+    <string>This app requires Siri access for voice commands and shortcuts.</string>
+
+    <!-- ⏰ Reminders Permission -->
+    <key>NSRemindersUsageDescription</key>
+    <string>This app requires access to your reminders to help track your tasks.</string>
+
+    <!-- ✅ Apple Sign-In -->
+    <key>NSFaceIDUsageDescription</key>
+    <string>This app uses Face ID for authentication and enhanced security.</string>
+
 </dict>
 </plist>

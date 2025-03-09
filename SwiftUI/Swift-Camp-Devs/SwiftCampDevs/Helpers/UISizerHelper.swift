@@ -120,7 +120,8 @@ struct UISizerHelper {
     struct ImageSize {
         static var small: CGSize {
                 CGSize(
-                    width: UISizerHelper.Screen.dynamicWidth(0.3), 
+                    
+                    width: UISizerHelper.Screen.dynamicWidth(0.3),
                     height: UISizerHelper.Screen.dynamicHeight(0.2)
                 )
             }
@@ -187,5 +188,3 @@ struct UISizerHelper {
     
    
 }
-     
-

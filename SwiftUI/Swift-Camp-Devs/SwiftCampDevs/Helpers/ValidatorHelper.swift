@@ -58,44 +58,39 @@ struct ValidatorHelper {
     
     private func validateTextField(value: String, type: TextFieldType) -> [String] {
         var errors: [String] = []
-        // Checking Minimum Length
+        
+        // Length Validation
         if let min = type.minLength, value.count < min {
             errors.append("\(type.displayName) must be at least \(min) characters long.")
         }
-        
-        // Checking Maximum Length
         if let max = type.maxLength, value.count > max {
             errors.append("\(type.displayName) cannot exceed \(max) characters.")
         }
         
         // Regex Validation
-        switch type {
-        case .username:
-            if let error = validateUsername(value) { errors.append(error) }
-        case .password:
-            if let error = validatePassword(value) { errors.append(error) }
-        case .email:
-            if let error = validateEmail(value) { errors.append(error) }
-        case .search:
-            if let error = validateSearch(value) { errors.append(error) }
-        case .phoneNumber:
-            if let error = validatePhoneNumber(value) { errors.append(error) }
-        case .url:
-            if let error = validateURL(value) { errors.append(error) }
-        case .numeric:
-            if let error = validateNumeric(value) { errors.append(error) }
-        case .nonEmpty:
-            if let error = validateNonEmpty(value) { errors.append(error) }
-        case .fullName:
-            if let error = validateFullName(value) { errors.append(error) }
-        case .custom(_, _):
-            if let error = validateCustom(value) { errors.append(error) }
+        if let error = validateByType(value: value, type: type) {
+            errors.append(error)
         }
         
         return errors
     }
+
+    private func validateByType(value: String, type: TextFieldType) -> String? {
+        switch type {
+        case .username: return validateUsername(value)
+        case .password: return validatePassword(value)
+        case .email: return validateEmail(value)
+        case .search: return validateSearch(value)
+        case .phoneNumber: return validatePhoneNumber(value)
+        case .url: return validateURL(value)
+        case .numeric: return validateNumeric(value)
+        case .nonEmpty: return validateNonEmpty(value)
+        case .fullName: return validateFullName(value)
+        case .custom(_, _): return validateCustom(value)
+        }
+    }
     
-    // MARK: - Validation Methods    
+    // MARK: - Validation Methods
     private func validateUsername(_ value: String) -> String? {
 
         if !RegexPattern.username.matches(value) {

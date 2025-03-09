@@ -3,7 +3,8 @@ import SwiftUI
 struct SCIcon: View {
     let iconName: String
     let size: IconSize
-    let color: Color 
+    let color: Color
+    
     var body: some View {
         Image(systemName: iconName)
             .resizable()
