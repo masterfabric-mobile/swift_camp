@@ -68,6 +68,26 @@ enum Strings {
         static let email = "Enter your email"
         static let password = "Enter your password"
     }
+    enum Validator {
+            static let usernameInvalid = "Username can only contain letters, numbers, and underscores."
+            static let passwordSpaces = "Password must not contain spaces."
+            static let passwordInvalid = "Password must contain at least 8 characters, including an uppercase letter, a lowercase letter, a number, and a special character."
+            static let emailInvalid = "Invalid email format."
+            static let fullNameConsecutiveSpaces = "Full name must not contain consecutive spaces."
+            static let fullNameInvalid = "Full name must contain only letters and spaces."
+            static let phoneNumberInvalid = "Phone number must match international format (e.g., +905551234567)."
+            static let urlInvalid = "Invalid URL format."
+            static let numericInvalid = "Only numeric characters are allowed."
+            static let fieldEmpty = "This field cannot be empty."
+
+            static func minLengthError(field: String, min: Int) -> String {
+                return "\(field) must be at least \(min) characters long."
+            }
+
+            static func maxLengthError(field: String, max: Int) -> String {
+                return "\(field) cannot exceed \(max) characters."
+            }
+        }
 }
  
 // SwiftUI Preview
