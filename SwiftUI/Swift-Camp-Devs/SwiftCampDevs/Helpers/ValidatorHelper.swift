@@ -49,8 +49,10 @@ struct ValidatorHelper {
             errorMessages += validateTextField(value: trimmedValue, type: .nonEmpty)
         case .fullName:
             errorMessages += validateTextField(value: trimmedValue, type: .fullName)
-        case .custom:
-            errorMessages += validateTextField(value: trimmedValue, type: .custom(placeholder: "Enter custom input", keyboardType: .asciiCapable))
+        case .custom(let customValidator):
+                    if let error = customValidator(trimmedValue) {
+                        errorMessages.append(error)
+                    }
         }
         
         return errorMessages.isEmpty ? nil : errorMessages.joined(separator: "\n")
@@ -61,13 +63,12 @@ struct ValidatorHelper {
         
         // Length Validation
         if let min = type.minLength, value.count < min {
-            errors.append("\(type.displayName) must be at least \(min) characters long.")
+            errors.append(Strings.Validator.minLengthError(field: type.displayName, min: min))
         }
         if let max = type.maxLength, value.count > max {
-            errors.append("\(type.displayName) cannot exceed \(max) characters.")
+            errors.append(Strings.Validator.maxLengthError(field: type.displayName, max: max))
         }
         
-        // Regex Validation
         if let error = validateByType(value: value, type: type) {
             errors.append(error)
         }
@@ -94,27 +95,26 @@ struct ValidatorHelper {
     private func validateUsername(_ value: String) -> String? {
 
         if !RegexPattern.username.matches(value) {
-                return RegexPattern.username.description
+            return Strings.Validator.usernameInvalid
             }
             return nil
     }
     
     private func validatePassword(_ value: String) -> String? {
         
-        if value.hasPrefix(" ") || value.hasSuffix(" ") || value.contains(" ") {
-            return "Password must not contain spaces "
-        }
-        
-        if !RegexPattern.password.matches(value) {
-            return RegexPattern.password.description
-        }
+        if value.contains(" ") {
+                   return Strings.Validator.passwordSpaces
+               }
+               if !RegexPattern.password.matches(value) {
+                   return Strings.Validator.passwordInvalid
+               }
         return nil
     }
     
     private func validateEmail(_ value: String) -> String? {
         
         if !RegexPattern.email.matches(value) {
-            return RegexPattern.email.description
+            return Strings.Validator.emailInvalid
         }
         return nil
     }
@@ -122,10 +122,10 @@ struct ValidatorHelper {
     private func validateFullName(_ value: String) -> String? {
         
         if(value.contains("  ")){
-            return "Full name must not contain consecutive spaces."
+            return Strings.Validator.fullNameConsecutiveSpaces
         }
         if !RegexPattern.fullName.matches(value) {
-            return RegexPattern.fullName.description
+            return Strings.Validator.fullNameInvalid
         }
         return nil
     }
@@ -137,7 +137,7 @@ struct ValidatorHelper {
     private func validatePhoneNumber(_ value: String) -> String? {
         
         if !RegexPattern.phone.matches(value) {
-            return RegexPattern.phone.description
+            return Strings.Validator.phoneNumberInvalid
         }
         return nil
     }
@@ -145,7 +145,7 @@ struct ValidatorHelper {
     private func validateURL(_ value: String) -> String? {
         
         if !RegexPattern.url.matches(value) {
-            return RegexPattern.url.description
+            return Strings.Validator.urlInvalid
         }
         return nil
     }
@@ -153,21 +153,21 @@ struct ValidatorHelper {
     private func validateNumeric(_ value: String) -> String? {
         
         if !RegexPattern.numeric.matches(value) {
-            return RegexPattern.numeric.description
+            return Strings.Validator.numericInvalid
         }
         return nil
     }
     
     private func validateNonEmpty(_ value: String) -> String? {
         if value.isEmpty {
-            return "This field cannot be empty."
-        }
+            return Strings.Validator.fieldEmpty
+    }
         return nil
     }
     
     private func validateCustom(_ value: String) -> String? {
         if value.isEmpty {
-            return "This field cannot be empty."
+            return Strings.Validator.fieldEmpty
         }
         return nil
     }
