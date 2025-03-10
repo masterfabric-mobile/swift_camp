@@ -19,7 +19,7 @@
     "type": "User",
     "user_view_type": "public",
     "site_admin": false,
-    "contributions": 209
+    "contributions": 216
   },
   {
     "login": "melihalkbk",
@@ -41,7 +41,7 @@
     "type": "User",
     "user_view_type": "public",
     "site_admin": false,
-    "contributions": 64
+    "contributions": 67
   },
   {
     "login": "turhanGoksu",
@@ -88,6 +88,28 @@
     "contributions": 48
   },
   {
+    "login": "busragedikoglu",
+    "id": 84907307,
+    "node_id": "MDQ6VXNlcjg0OTA3MzA3",
+    "avatar_url": "https://avatars.githubusercontent.com/u/84907307?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/busragedikoglu",
+    "html_url": "https://github.com/busragedikoglu",
+    "followers_url": "https://api.github.com/users/busragedikoglu/followers",
+    "following_url": "https://api.github.com/users/busragedikoglu/following{/other_user}",
+    "gists_url": "https://api.github.com/users/busragedikoglu/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/busragedikoglu/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/busragedikoglu/subscriptions",
+    "organizations_url": "https://api.github.com/users/busragedikoglu/orgs",
+    "repos_url": "https://api.github.com/users/busragedikoglu/repos",
+    "events_url": "https://api.github.com/users/busragedikoglu/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/busragedikoglu/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false,
+    "contributions": 46
+  },
+  {
     "login": "yuceel",
     "id": 108794593,
     "node_id": "U_kgDOBnwS4Q",
@@ -110,26 +132,26 @@
     "contributions": 46
   },
   {
-    "login": "busragedikoglu",
-    "id": 84907307,
-    "node_id": "MDQ6VXNlcjg0OTA3MzA3",
-    "avatar_url": "https://avatars.githubusercontent.com/u/84907307?v=4",
+    "login": "NurhayatYurtaslan",
+    "id": 80510115,
+    "node_id": "MDQ6VXNlcjgwNTEwMTE1",
+    "avatar_url": "https://avatars.githubusercontent.com/u/80510115?v=4",
     "gravatar_id": "",
-    "url": "https://api.github.com/users/busragedikoglu",
-    "html_url": "https://github.com/busragedikoglu",
-    "followers_url": "https://api.github.com/users/busragedikoglu/followers",
-    "following_url": "https://api.github.com/users/busragedikoglu/following{/other_user}",
-    "gists_url": "https://api.github.com/users/busragedikoglu/gists{/gist_id}",
-    "starred_url": "https://api.github.com/users/busragedikoglu/starred{/owner}{/repo}",
-    "subscriptions_url": "https://api.github.com/users/busragedikoglu/subscriptions",
-    "organizations_url": "https://api.github.com/users/busragedikoglu/orgs",
-    "repos_url": "https://api.github.com/users/busragedikoglu/repos",
-    "events_url": "https://api.github.com/users/busragedikoglu/events{/privacy}",
-    "received_events_url": "https://api.github.com/users/busragedikoglu/received_events",
+    "url": "https://api.github.com/users/NurhayatYurtaslan",
+    "html_url": "https://github.com/NurhayatYurtaslan",
+    "followers_url": "https://api.github.com/users/NurhayatYurtaslan/followers",
+    "following_url": "https://api.github.com/users/NurhayatYurtaslan/following{/other_user}",
+    "gists_url": "https://api.github.com/users/NurhayatYurtaslan/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/NurhayatYurtaslan/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/NurhayatYurtaslan/subscriptions",
+    "organizations_url": "https://api.github.com/users/NurhayatYurtaslan/orgs",
+    "repos_url": "https://api.github.com/users/NurhayatYurtaslan/repos",
+    "events_url": "https://api.github.com/users/NurhayatYurtaslan/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/NurhayatYurtaslan/received_events",
     "type": "User",
     "user_view_type": "public",
     "site_admin": false,
-    "contributions": 42
+    "contributions": 38
   },
   {
     "login": "beyzanuravsar",
@@ -151,7 +173,7 @@
     "type": "User",
     "user_view_type": "public",
     "site_admin": false,
-    "contributions": 35
+    "contributions": 37
   },
   {
     "login": "alakkaya",
@@ -173,7 +195,7 @@
     "type": "User",
     "user_view_type": "public",
     "site_admin": false,
-    "contributions": 34
+    "contributions": 35
   },
   {
     "login": "elifdodanli",
@@ -196,28 +218,6 @@
     "user_view_type": "public",
     "site_admin": false,
     "contributions": 31
-  },
-  {
-    "login": "NurhayatYurtaslan",
-    "id": 80510115,
-    "node_id": "MDQ6VXNlcjgwNTEwMTE1",
-    "avatar_url": "https://avatars.githubusercontent.com/u/80510115?v=4",
-    "gravatar_id": "",
-    "url": "https://api.github.com/users/NurhayatYurtaslan",
-    "html_url": "https://github.com/NurhayatYurtaslan",
-    "followers_url": "https://api.github.com/users/NurhayatYurtaslan/followers",
-    "following_url": "https://api.github.com/users/NurhayatYurtaslan/following{/other_user}",
-    "gists_url": "https://api.github.com/users/NurhayatYurtaslan/gists{/gist_id}",
-    "starred_url": "https://api.github.com/users/NurhayatYurtaslan/starred{/owner}{/repo}",
-    "subscriptions_url": "https://api.github.com/users/NurhayatYurtaslan/subscriptions",
-    "organizations_url": "https://api.github.com/users/NurhayatYurtaslan/orgs",
-    "repos_url": "https://api.github.com/users/NurhayatYurtaslan/repos",
-    "events_url": "https://api.github.com/users/NurhayatYurtaslan/events{/privacy}",
-    "received_events_url": "https://api.github.com/users/NurhayatYurtaslan/received_events",
-    "type": "User",
-    "user_view_type": "public",
-    "site_admin": false,
-    "contributions": 24
   },
   {
     "login": "ayberkgorgun",
