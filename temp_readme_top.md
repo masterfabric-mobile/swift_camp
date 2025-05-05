@@ -376,7 +376,7 @@ Additional components that enhance layout, media integration, and state manageme
     <tr>
       <td align="center" valign="top" width="14.28%">
         <a href="https://masterfabric.co/">
-          <img src="https://media.licdn.com/dms/image/v2/D4D0BAQHMY1PizVx25g/company-logo_200_200/company-logo_200_200/0/1722714904714?e=1743638400&v=beta&t=VPrq6pnYVs5KZ7x1dcb0YxWTU6ACDU6M0sqD5hMsjKE" alt="MasterFabric" />
+          <img src="https://avatars.githubusercontent.com/u/181661966?s=200&v=4" alt="MasterFabric" />
           <br /><sub><b>MasterFabric</b></sub>
         </a>
       </td>
